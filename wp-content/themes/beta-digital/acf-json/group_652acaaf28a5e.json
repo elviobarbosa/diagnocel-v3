@@ -1,0 +1,76 @@
+{
+    "key": "group_652acaaf28a5e",
+    "title": "[CPT] PARCEIROS",
+    "fields": [
+        {
+            "key": "field_652acaaf7ae4a",
+            "label": "Área de Atuação",
+            "name": "area_de_atuacao",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "AC: Acre": "AC: Acre",
+                "AL: Alagoas": "AL: Alagoas",
+                "AP: Amapá": "AP: Amapá",
+                "AM: Amazonas": "AM: Amazonas",
+                "BA: Bahia": "BA: Bahia",
+                "CE: Ceará": "CE: Ceará",
+                "DF: Distrito Federal": "DF: Distrito Federal",
+                "ES: Espírito Santo": "ES: Espírito Santo",
+                "GO: Goiás": "GO: Goiás",
+                "MA: Maranhão": "MA: Maranhão",
+                "MT: Mato Grosso": "MT: Mato Grosso",
+                "MS: Mato Grosso do Sul": "MS: Mato Grosso do Sul",
+                "MG: Minas Gerais": "MG: Minas Gerais",
+                "PA: Pará": "PA: Pará",
+                "PB: Paraíba": "PB: Paraíba",
+                "PR: Paraná": "PR: Paraná",
+                "PE: Pernambuco": "PE: Pernambuco",
+                "PI: Piauí": "PI: Piauí",
+                "RJ: Rio de Janeiro": "RJ: Rio de Janeiro",
+                "RN: Rio Grande do Norte": "RN: Rio Grande do Norte",
+                "RS: Rio Grande do Sul": "RS: Rio Grande do Sul",
+                "RO: Rondônia": "RO: Rondônia",
+                "RR: Roraima": "RR: Roraima",
+                "SC: Santa Catarina": "SC: Santa Catarina",
+                "SP: São Paulo": "SP: São Paulo",
+                "SE: Sergipe": "SE: Sergipe",
+                "TO: Tocantins": "TO: Tocantins"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post_parceiros"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697304185
+}

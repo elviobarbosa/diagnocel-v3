@@ -1,0 +1,16 @@
+.btn {
+  text-decoration: none;
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &--primary {
+  
+      &:hover {
+          
+      }
+  }
+}
+

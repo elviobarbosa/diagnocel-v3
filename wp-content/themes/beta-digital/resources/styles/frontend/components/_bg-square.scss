@@ -1,0 +1,5 @@
+.bg-square {
+    @include fluid-size(width, 200px, 550px);
+    @include fluid-size(height, 200px, 400px);
+    background-image: url($imgpath + '/bg-square.png');
+}

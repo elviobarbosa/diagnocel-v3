@@ -1,0 +1,24 @@
+/* CSS Document */
+
+main {
+	position: relative;
+}
+
+body{
+	background-color: #EAEDF0;
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $headings;
+}
+
+figure {
+	padding: 0;
+	margin: 0;
+}

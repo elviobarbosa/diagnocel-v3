@@ -1,0 +1,90 @@
+.prod-category {
+    background-color: $primary-color;
+    @include border-radius(12px);
+    font-size: px-rem(14px);
+    padding: px-rem(16px) px-rem(10px);
+    margin: px-rem(40px) 0 0 0;
+    position: relative;
+    max-width: 1600px;
+    width: 95vw;
+    margin: 40px auto;
+}
+
+.menu-categories {
+   padding: 0;
+   margin: 0;
+
+    li {
+        display: inline-flex;
+        list-style: none;
+        font-size: px-rem(16px);
+        padding-left: 10px;
+        color:  $light-blue;
+
+        a {
+            color:  $light-blue;
+            text-decoration: none;
+        }
+
+        &:not(:last-child) {
+            padding-right: 10px;
+            border-right: 1px solid #5C5EB7;
+        }
+    }
+    
+    &__submenu {
+        position: absolute;
+        display: none;
+        top: 45px;
+        background: $light-blue;
+        padding: 10px;
+        margin: 0;
+        width: inherit;
+        -webkit-border-bottom-right-radius: 12px;
+        -webkit-border-bottom-left-radius: 12px;
+        -moz-border-radius-bottomright: 12px;
+        -moz-border-radius-bottomleft: 12px;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        width: max-content;
+        right: 0;
+
+        li {
+            list-style: none;
+            padding: 10px 0;
+            font-weight: 500;
+            font-size: px-rem(16px);
+            a {
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__more {
+        position: absolute;
+        color: $primary-color;
+        font-weight: 500;
+        font-size: px-rem(14px);
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        padding: 0 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: $light-blue;
+        -webkit-border-top-right-radius: 12px;
+        -webkit-border-bottom-right-radius: 12px;
+        -moz-border-radius-topright: 12px;
+        -moz-border-radius-bottomright: 12px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+        &:hover {
+            .menu-categories__submenu {
+                display: block;
+            }
+        }
+    }
+}

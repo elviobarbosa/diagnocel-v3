@@ -1,0 +1,19 @@
+$primary-color: #2F3188;
+$secondary-color: #D83731;
+$light-blue: #AEC0FA;
+$citzen: #EAEDF0;
+$gray-500: #676767; 
+$gray-200: #A2A2A2;
+$light-color: #ffffff;
+
+$theme-colors: (
+  "primary-color": $primary-color,
+  "secundary-color": $secondary-color,
+  "gray-500": $gray-500,
+  "gray-200": $gray-200,
+  "light-color": $light-color
+);
+
+@include rootcolors($theme-colors);
+@include colors($theme-colors);
+@include bgcolors($theme-colors);

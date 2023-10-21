@@ -1,0 +1,23 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+     
+
+   &:focus {
+      outline: none; 
+  }
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+   
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    
+}
+
+::placeholder {
+   
+}

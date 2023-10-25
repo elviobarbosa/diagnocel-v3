@@ -1,3 +1,120 @@
-footer {
-    
+.footer {
+    background-color: white;
+    border-bottom: px-rem(30px) $primary-color solid;
+
+    @include max-xl {
+        text-align: center;
+    }
+
+    h2 {
+        @include fluid-size(font-size, 24px, 30px);
+        font-weight: 300;
+        color: $gray-500;
+
+        @include min-xl {
+            padding-left: px-rem(60px);
+        }
+    }
+
+    ul {
+        margin: 0;
+        li {
+            list-style: none;
+        }
+    }
+
+    &__left {
+        @include max-xl {
+            padding: px-rem(20px) 0;
+            border-bottom: 1px solid $gray-100;   
+        }
+
+        @include min-xl {
+            border-right: 1px solid $gray-100;
+            padding-top: px-rem(40px);
+        }
+    }
+
+    &__categories {
+        @include max-xl {
+            padding: px-rem(20px) 0;
+        }
+
+        @include min-xl {
+            border-bottom: 1px solid $gray-100;
+            padding-left: px-rem(60px);
+            padding-bottom: px-rem(40px);
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    }
+
+    &__selos {
+        @include max-xl {
+            padding: px-rem(20px) 0;
+            border-bottom: 1px solid $gray-100;
+            column-count: 3;
+            column-gap: 40px;
+            -moz-column-count: 3;
+            -moz-column-gap: 40px;
+            -webkit-column-count: 3;
+            -webkit-column-gap: 40px;
+            gap: 20px;
+        }
+
+        @include min-xl {
+            padding-left: px-rem(60px);
+            padding-bottom: px-rem(40px);
+            padding-top: px-rem(40px);
+            column-count: 8;
+            column-gap: 40px;
+            -moz-column-count: 8;
+            -moz-column-gap: 40px;
+            -webkit-column-count: 8;
+            -webkit-column-gap: 40px;
+            gap: 20px;
+        }
+    }
+
+    &__right {
+        @include max-xl {
+            padding: px-rem(20px) 0;
+        }
+
+        @include min-xl {
+            padding-top: px-rem(40px);
+            justify-self: center;
+        }
+
+        a {
+            color: $gray-500;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+    }
+
+    &__diagnocel {
+        padding-bottom: 30px;
+    }
+
+    &__biocore {
+        padding-bottom: 30px;
+    }
+
+    &__container {
+        @include min-xl {
+            display: grid;
+            grid-template-columns: calc(100% - 300px) 300px;
+        }
+
+    }
 }

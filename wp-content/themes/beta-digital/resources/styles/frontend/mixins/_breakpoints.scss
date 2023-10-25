@@ -51,8 +51,15 @@
   }
 }
 
+
 @mixin max-xl {
   @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin max-xxl {
+  @media (max-width: #{$screen-xxl-min}) {
     @content;
   }
 }
@@ -64,7 +71,7 @@
 }
 
 @mixin max-xxxl {
-  @media (min-width: #{$screen-xxxl-min}) {
+  @media (max-width: #{$screen-xxxl-min}) {
     @content;
   }
 }

@@ -33,7 +33,7 @@
             padding: 5px 0 5px 5px;
             img {
                 width: 100%;
-                height: auto
+                height: auto;
             }
         }
     }
@@ -72,6 +72,29 @@
         a{
             color: $gray-500;
             text-decoration: none;
+        }
+    }
+}
+
+.c-products-related {
+   
+    padding: px-rem(60px) 0;
+    background-color: #E2E7EB;
+
+    &__title {
+        @include fluid-size(font-size, 30px, 45px);
+        color: $primary-color;
+        font-weight: 300;
+        
+    }
+
+    &__container {
+        width: 95vw;
+        max-width: $max-width;
+        margin: 0 auto;
+
+        .c-square-detail {
+            background-color: #E2E7EB;
         }
     }
 }

@@ -47,7 +47,7 @@
                     "label": "Descrição do item",
                     "name": "descricao_do_item",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -57,10 +57,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -83,5 +83,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697304176
+    "modified": 1698241198
 }

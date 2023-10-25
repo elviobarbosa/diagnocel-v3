@@ -1,0 +1,11 @@
+#breadcrumbs {
+    font-size: 12px;
+    padding: px-rem(20px)  px-rem(30px);
+    border-bottom: 1px solid white;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+    }
+}

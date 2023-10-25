@@ -1,5 +1,6 @@
 .archive-products {
     max-width: 1366px;
+    width: 95vw;
     margin: 0 auto;
    
     &__grid {
@@ -7,7 +8,6 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
         padding-bottom: px-rem(60px);
-        
     }
     
     &__category-head {
@@ -19,6 +19,12 @@
     &__category-name {
         @include fluid-size(font-size, 30px, 45px);
         color: $primary-color;
+        font-weight: 300;
+    }
+
+    &__subcategory-name {
+        @include fluid-size(font-size, 24px, 30px);
+        color: #676767;
         font-weight: 300;
     }
 

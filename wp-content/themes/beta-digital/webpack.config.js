@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
@@ -31,6 +32,10 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader'
           },
+          {
+            test: /\.svg$/,
+            use: [ '@svgr/webpack', 'url-loader' ],
+          },
           // sass compilation
           {
             test: /\.(sass|scss)$/,
@@ -56,7 +61,20 @@ module.exports = {
       },
     
       plugins: [
-        // clear out build directories on each build
+        new SVGSpritemapPlugin(
+          './resources/images/svg/*.svg',
+          {
+              output: {
+                  filename: '../images/svg/sprite.svg',
+              },
+              sprite: {
+                  prefix: '',
+                  generate: {
+                      title: false
+                  },
+              },
+          }
+        ),
         new CleanWebpackPlugin({
           cleanOnceBeforeBuildPatterns: [
             '../dist/scripts/*',

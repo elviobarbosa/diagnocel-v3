@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Carrosel from './components/carrosel';
 import Menu from './components/menu';
 import MenuCategories from './components/menu-categories';
+import Accordeon from './components/accordeon';
 
 
 function domReady(fn) {
@@ -12,6 +13,7 @@ function domReady(fn) {
       new Menu();
       new Carrosel();
       new MenuCategories();
+      new Accordeon();
     }
 }
 

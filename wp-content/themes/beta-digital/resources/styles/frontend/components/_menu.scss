@@ -1,6 +1,5 @@
 .nav-container {
 	background-color: white;
-	border-top: 6px solid $gray-500;
 	box-sizing: border-box;
 	padding: 1rem 2rem;
 	width: 100%;
@@ -42,92 +41,153 @@
 		}
 	}
 
+	&__social {
+		display: flex;
+		
+		div {
+			width: 22px;
+			height: 22px;
+			margin-left: 10px;
+		}
+	}
+
 	nav.main-menu {
 		width: 100%;
 
-		#menu-principal {
-			display: block;
-			list-style: none;
-			padding: 0;
-			width: 100%;
-			text-align: center;
-			margin: 0;
-
+		ul {
 			@include min-xl {
 				display: flex;
+				padding: 0;
+				margin: 0;
 				align-items: center;
-				height: 100%;
+			}
+			
+
+			li {
+				@include min-xl {
+					list-style: none;
+					font-size: px-rem(14px);
+					font-weight: 700;
+				}
+
+				a {
+					text-decoration: none;
+					color: #30353E;
+					transition: all .5s;
+					position: relative;
+					display: inline-block;
+
+					&::after {
+						content: '';
+						background-color: $secondary-color;
+						height: 2px;
+						width: 0%;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						@include border-radius(8px);
+						transition: all .5s;
+					}
+
+				}
+
+				a:hover {
+					color: $primary-color;
+					transition: all .5s;
+
+					&::after {
+						width: 100%;
+						transition: all .3s;
+					}
+				}
 			}
 
-			.menu-item {
-				color: color-theme('primary-color');
-				text-align: center;
-				padding: 2rem 0;
-		
-				&:not(:last-child) {
-					margin-bottom: 30px;
-				}
-		
+			li:not(:last-child) {
 				@include min-xl {
-					text-align: left;
-		
-					&:not(:last-child) {
-						margin-bottom: 0;
-						margin-right: 20px;
-					}
-				}
-		
-				a {
-					font-size: 1.6rem;
-					font-weight: 500;
-					position: relative;
-					text-decoration: none;
-					text-transform: uppercase;
-					padding: 1rem;
-					color: $primary-color;
-		
-					
-		
-					&:before {
-						background-color: $primary-color;
-						bottom: -10px;
-						content: '';
-						height: 1px;
-						left: 0;
-						position: absolute;
-						transition: width 0.1s ease-in;
-						width: 0;
-					}
-		
-					&:hover::before {
-						width: 100%;
-					}
-				}
-		
-				&.current_page_item {
-					a {
-						&:before {
-							background-color: $primary-color;
-							bottom: -10px;
-							content: '';
-							height: 1px;
-							left: 0;
-							position: absolute;
-							transition: width 0.1s ease-in;
-							width: 100%;
-						}
-					}
+					margin-right: px-rem(20px);
 				}
 			}
 		}
+
+		// #menu-principal {
+		// 	display: block;
+		// 	list-style: none;
+		// 	padding: 0;
+		// 	width: 100%;
+		// 	text-align: center;
+		// 	margin: 0;
+
+		// 	@include min-xl {
+		// 		display: flex;
+		// 		align-items: center;
+		// 		height: 100%;
+		// 	}
+
+		// 	.menu-item {
+		// 		color: color-theme('primary-color');
+		// 		text-align: center;
+		// 		padding: 2rem 0;
+		
+		// 		&:not(:last-child) {
+		// 			margin-bottom: 30px;
+		// 		}
+		
+		// 		@include min-xl {
+		// 			text-align: left;
+		
+		// 			&:not(:last-child) {
+		// 				margin-bottom: 0;
+		// 				margin-right: 20px;
+		// 			}
+		// 		}
+		
+		// 		a {
+		// 			font-size: 1.6rem;
+		// 			font-weight: 500;
+		// 			position: relative;
+		// 			text-decoration: none;
+		// 			text-transform: uppercase;
+		// 			padding: 1rem;
+		// 			color: $primary-color;
+		
+					
+		
+		// 			&:before {
+		// 				background-color: $primary-color;
+		// 				bottom: -10px;
+		// 				content: '';
+		// 				height: 1px;
+		// 				left: 0;
+		// 				position: absolute;
+		// 				transition: width 0.1s ease-in;
+		// 				width: 0;
+		// 			}
+		
+		// 			&:hover::before {
+		// 				width: 100%;
+		// 			}
+		// 		}
+		
+		// 		&.current_page_item {
+		// 			a {
+		// 				&:before {
+		// 					background-color: $primary-color;
+		// 					bottom: -10px;
+		// 					content: '';
+		// 					height: 1px;
+		// 					left: 0;
+		// 					position: absolute;
+		// 					transition: width 0.1s ease-in;
+		// 					width: 100%;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 
 	&__logo {
 		z-index: 100;
-
-		svg {
-			
-		}
 	}
 
 	&__menu.active {

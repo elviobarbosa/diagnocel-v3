@@ -46,7 +46,6 @@ function register_custom_image_sizes() {
        add_theme_support( 'produtct-full' );
     }
     add_image_size( 'brand', 300, 30, false);
-    //add_image_size( 'main-image', 1311, 657, true);
     add_image_size( 'main-image-mobile', 350, 263, true);
     add_image_size( 'product-thumb', 300, 220, false);
     add_image_size( 'produtct-full', 510, 510, false);
@@ -56,12 +55,32 @@ add_action( 'after_setup_theme', 'register_custom_image_sizes' );
 function add_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'full-image' => __( 'Custom 1311x657' ),
-        //'main-image' => __( 'Custom 1311x657' ),
         'main-image-mobile' => __( 'Custom 350x263' ),
         'product-thumb' => __( 'Custom 300x220' ),
         'produtct-full' => __( 'Custom 510x510' ),
     ) );
 }
 add_filter( 'image_size_names_choose', 'add_custom_image_sizes' );
+
+add_filter(
+    'wpseo_breadcrumb_links',
+    function ( $links ) {
+        if ( sizeof( $links ) > 1 ) {
+            array_pop( $links );
+        }
+        return $links;
+    }
+);
+
+function custom_taxonomy_template( $template ) {
+    $term = get_queried_object();
+
+    if ( isset( $term->taxonomy ) && ( $term->taxonomy == 'prod_category' ) ) {
+        return get_template_directory() . '/produtos-by-category.php'; 
+    }
+
+    return $template;
+}
+add_filter( 'template_include', 'custom_taxonomy_template' );
 
 add_action( 'init', 'setup' );

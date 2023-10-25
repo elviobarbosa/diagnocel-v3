@@ -1,0 +1,30 @@
+.c-accordeon {
+    &__title {
+        font-size: px-rem(18px);
+        color: $gray-500;
+        font-weight: 500;
+    }
+
+    &__content {
+        font-size: px-rem(18px);
+        color: $gray-500;
+        font-weight: 300;
+        line-height: 1.6em;
+        padding-bottom: px-rem(40px);
+        padding-top: px-rem(20px);
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: $gray-200;
+        border-bottom: 1px solid #CBCBCB;
+    }
+
+    &__arrow {
+        width: 14px;
+        height: 8px;
+        line-height: 0;
+    }
+}

@@ -1,0 +1,361 @@
+.institucional {
+
+    &__cover {
+        color: white;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 137px;
+            height: 364px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+        }
+        
+        .wp-block-media-text__content {
+            h1 {
+                @include fluid-size(font-size, 30px, 45px);
+                font-weight: 300;
+                max-width: 500px;
+                margin: 0 auto px-rem(20px);
+            }
+           
+            p {
+                font-size: px-rem(18px);
+                line-height: 1.5rem;
+                font-weight: 300;
+                max-width: 500px;
+                margin: auto auto;
+                padding-bottom: px-rem(10px);
+            }
+            strong {
+                color: white;
+            }
+        }
+
+        figure {
+            position: relative;
+            .square-details {
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                width: 20%;
+                height: 60%;
+    
+                div {
+                    width: 100%;
+                    height: 33.39%;
+                }
+
+                div:nth-child(2) {
+                    margin-left: -100%;
+                }
+               
+            }
+        
+        }
+    }
+
+    &__description {
+        .wp-block-group__inner-container {
+            max-width: 750px;
+            padding-top: px-rem(80px);
+            padding-bottom: px-rem(150px);
+        }
+    }
+
+    &__mvv-card {
+        max-width: px-rem(715px);
+        background: white;
+        box-sizing: border-box;
+        padding: px-rem(40px) px-rem(20px);
+
+        .safe-svg-cover {
+            text-align: center!important;
+            padding-top: px-rem(20px);
+        }
+        p, ul {
+            padding-right: px-rem(40px);
+        }
+
+        ul {
+            margin: 0;
+            padding-left: px-rem(10px);
+        }
+    }
+
+    &__anagrama {
+        background-image: url($imgpath + '/bg-grid.png');
+        
+        figure {
+            width: 90vw;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+    }
+
+    &__mvv {
+        padding-bottom: px-rem(120px);
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 50%;
+            max-width: 550px;
+            height: 105%;
+            right: 0%;
+            transform: translate(-50%, -10%);
+            position: absolute;
+            top: 0%;
+            z-index: 0;
+        }
+
+        .wp-block-group {
+            &__inner-container {
+                z-index: 1;
+                position: relative;
+                max-width: 1170px;
+                display: grid;
+                grid-gap: 20px;
+            }
+        }
+    }
+
+    &__policy {
+        max-width: $max-width;
+        margin: 0 auto;
+        position: relative;
+        width: 95vw;
+
+        figure {
+            position: relative;
+        }
+    }
+
+    &__beneficios {
+        max-width: $max-width;
+        width: 95vw;
+        margin: 0 auto;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-40%);
+        }
+    }
+
+    &__quality {
+        max-width: $max-width;
+        @include fluid-size(margin-top, 50px, 100px);
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 95vw;
+
+        h2, p {
+            padding-left: 4%;
+        }
+
+        .wp-block-group__inner-container p {
+            @include fluid-size(font-size, 30px, 40px);
+            font-weight: 300;
+            line-height: 1.5em;
+        }
+    }
+
+    p, li {
+        font-size: px-rem(18px);
+        color: $gray-500;
+        line-height: 1.8rem;
+        font-weight: 300;
+
+    }
+
+    h2 {
+        @include fluid-size(font-size, 24px, 30px);
+        font-weight: 300;
+    }
+
+}
+
+.page-diagnocel {
+    h2 {
+        color: $primary-color;
+    }
+
+    .institucional {
+        &__cover {
+            background-color: $primary-color;
+
+            &::after {
+                background-image: url($imgpath + '/dots-blue.png');
+            }
+
+            p {
+                color: #AEC0FA;
+            }
+            
+            .square-details {
+                .child-div {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        &__mvv {
+            &::after {
+                background-image: url($imgpath + '/bg-square.png');
+            }
+
+            svg,  path {
+                fill: $primary-color
+            }
+            .wp-block-group {
+                &__inner-container {
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: auto auto; 
+                }
+            }
+        }
+
+        &__mvv-card {
+            display: block;
+
+            .safe-svg-cover {
+                text-align: left!important;
+            }
+        }
+
+        &__policy {
+            figure {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #EAF2F2;
+                    width: 5%;
+                    height: 6%;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 3%;
+                    left: 3%;
+                    border: 1px solid #88A3C4;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    
+                }
+            }
+            
+        }
+
+        &__beneficios {
+            &::after {
+                background-image: url($imgpath + '/bg-square.png');
+            }
+        }
+    }
+}
+
+.page-biocore {
+    background-color: #EAF2F2;
+
+    h2 {
+        color: $green;
+    }
+
+    .institucional {
+        &__cover {
+
+            &::after {
+                background-image: url($imgpath + '/dots-green.png');
+            }
+
+            p {
+                color: #C4E8E7;
+            }
+            background-color: #4B8B89;
+            .square-details {
+                .child-div {
+                    background-color: #4B8B89;
+                }
+            }
+        }
+
+        &__mvv {
+            &::after {
+                background-image: url($imgpath + '/bg-square-green2.png');
+            }
+            .wp-block-group {
+                &__inner-container {
+                    grid-template-columns: 55% 1fr;
+                    grid-template-rows: auto auto; 
+    
+                    grid-template-areas:
+                        "left-left right-right"
+                        "left-right right-right";
+    
+                    .left-left {
+                        grid-area: left-left;
+                        height: 100%;
+                    }
+                    
+                    .left-right {
+                        grid-area: left-right;
+                    }
+                        
+                    .right-right {
+                        grid-area: right-right;
+                    }
+                }
+            }
+        }
+
+        &__policy {
+            figure {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #EAF2F2;
+                    width: 5%;
+                    height: 6%;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 3%;
+                    left: 3%;
+                    border: 1px solid #88A3C4;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    
+                }
+            }
+            
+        }
+
+        &__beneficios {
+            &::after {
+                background-image: url($imgpath + '/bg-square-green2.png');
+            }
+        }
+    }
+
+    
+}

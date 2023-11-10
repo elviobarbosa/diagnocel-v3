@@ -6,6 +6,7 @@ require_once 'app/ajax.php';
 require_once 'app/enqueue.php';
 require_once 'app/cpt.php';
 require_once 'app/members.php';
+require_once 'app/shortcodes.php';
 
 define("URLTEMA", get_bloginfo("template_url"));
 define("RESOURCES", get_bloginfo("template_url") . "/resources/");

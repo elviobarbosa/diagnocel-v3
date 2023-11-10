@@ -44,6 +44,13 @@
             border-bottom: 1px solid $gray-100;
             padding-left: px-rem(60px);
             padding-bottom: px-rem(40px);
+            column-count: 3;
+            column-gap: 40px;
+            -moz-column-count: 3;
+            -moz-column-gap: 40px;
+            -webkit-column-count: 3;
+            -webkit-column-gap: 40px;
+            gap: 20px;
         }
 
         li {
@@ -81,6 +88,10 @@
             -webkit-column-count: 8;
             -webkit-column-gap: 40px;
             gap: 20px;
+        }
+
+        img {
+            max-width: 60px;
         }
     }
 

@@ -18,6 +18,7 @@ function wpdocs_theme_name_scripts() {
     
     function prefix_add_footer_styles() {
         wp_enqueue_style( 'font-inter', 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,500;0,6..12,700;0,6..12,800;1,6..12,300;1,6..12,500;1,6..12,700;1,6..12,800&display=swap' );
+        wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' );
         // wp_enqueue_style( 'fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css' );
        
     };

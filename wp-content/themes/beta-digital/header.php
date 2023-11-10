@@ -18,7 +18,7 @@
 	<?php wp_head() ?>
 </head>
 
-<body <?php post_class('front-page') ?>>
+<body <?php body_class() ?>>
 
 <div class="nav-container">
 	<div class="container nav-container__container">

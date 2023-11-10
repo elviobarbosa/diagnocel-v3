@@ -62,6 +62,23 @@ function add_custom_image_sizes( $sizes ) {
 }
 add_filter( 'image_size_names_choose', 'add_custom_image_sizes' );
 
+function add_custom_body_class($classes) {
+    if (is_page('biocore')) {
+        $classes[] = 'page-biocore';
+    }
+
+    if (is_page('sustentabilidade')) {
+        $classes[] = 'page-sustentabilidade';
+    }
+
+    if (is_page('diagnocel')) {
+        $classes[] = 'page-diagnocel';
+    }
+    return $classes;
+}
+
+add_filter('body_class', 'add_custom_body_class');
+
 add_filter(
     'wpseo_breadcrumb_links',
     function ( $links ) {

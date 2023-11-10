@@ -1,0 +1,95 @@
+.atuacao {
+    position: relative;
+
+    &::after {
+        content: '';
+        
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        z-index: 0;
+    }
+
+    &__header {
+        @include fluid-size(margin-top, 50px, 150px);
+        max-width: $max-width;
+        width: 89vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px; 
+    }
+
+    &__areas {
+        max-width: $max-width;
+        width: 89vw;
+        margin: px-rem(50px) auto 10px;
+        position: relative;
+        z-index: 1;
+        align-items: center!important;
+    }
+
+    &__mapa {
+        text-align: center;
+        padding: 15px 0;
+        img {
+            max-width: 500px;
+        }
+    }
+
+}
+
+.page-diagnocel {
+
+    .atuacao {
+        &::after {
+            background-color: $primary-color;
+        }
+
+        &__mapa {
+            background-color: $primary-color;
+            background-image: url($imgpath + '/legendas-diagnocel.png');
+            background-repeat: no-repeat;
+            background-position: 90% 90%;
+        }
+
+        &__areas {
+            p {
+                color: $primary-color;
+
+                strong {
+                    color: $secondary-color;
+                }
+            }
+            
+        }
+    }
+}
+
+.page-biocore {
+
+    .atuacao {
+        &::after {
+            background-color: $green;
+        }
+
+        &__mapa {
+            background-color: $green;
+            background-image: url($imgpath + '/legendas-biocore.png');
+            background-repeat: no-repeat;
+            background-position: 90% 90%;
+        }
+
+        &__areas {
+            p {
+                color: #1E4E4D;
+
+                strong {
+                    color: #169692;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import Swiper from 'swiper';
 export default class Carrosel {
     constructor() {
         this.selector = '.swiper';

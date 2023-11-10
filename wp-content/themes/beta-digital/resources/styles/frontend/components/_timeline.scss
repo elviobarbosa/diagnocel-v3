@@ -1,0 +1,61 @@
+.timeline {
+   
+    .swiper-slide {
+        height: initial;
+    }
+
+    &__title {
+        @include fluid-size(margin-top, 50px, 150px);
+        max-width: $max-width;
+        width: 89vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__slider {
+        max-width: 580px;
+        background-color: white;
+        padding: px-rem(15px) px-rem(20px);
+        position: relative;
+        margin-top: 130px;
+
+        .wp-block-media-text {
+            grid-template-columns: 80px auto!important;
+        }
+
+        .wp-block-media-text__media {
+            width: 80px;
+        }
+
+        figure {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            max-width: 80px;
+        }
+    }
+
+    &__year {
+        transform: rotate(270deg) translate(115px, 0px);
+        display: inline-block;
+        font-size: 35px;
+        font-weight: 300;
+        color: $gray-500;
+        position: absolute;
+
+        &::after {
+            content: '';
+            background-color: $gray-500;
+            width: 2px;
+            height: 30px;
+            display: block;
+            transform: rotate(90deg) translate(-40px, 20px);
+        }
+    }
+
+    &__content {
+        padding: px-rem(20px);
+    }
+}

@@ -1,0 +1,97 @@
+.page-sustentabilidade {
+    background-color: #EAF2F2;
+}
+
+.sustentabilidade {
+    &__cover {
+
+        h1 {
+            @include fluid-size(font-size, 30px, 45px);
+            font-weight: 300;
+            max-width: 500px;
+            color: white;
+            margin: 0 auto px-rem(20px);
+        }
+       
+        p {
+            font-size: px-rem(18px);
+            line-height: 1.5rem;
+            font-weight: 300;
+            max-width: 500px;
+            margin: auto auto;
+            padding-bottom: px-rem(10px);
+        }
+
+        &::after {
+            background-image: url($imgpath + '/dots-green.png');
+        }
+
+        p {
+            color: #C4E8E7;
+        }
+        background-color: #4B8B89;
+
+        figure {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #4B8B89;
+                opacity: .3;
+                mix-blend-mode: multiply;
+            }
+        }
+        .square-details {
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            width: 20%;
+            height: 60%;
+
+            div {
+                width: 100%;
+                height: 33.39%;
+            }
+
+            div:nth-child(2) {
+                margin-left: -100%;
+            }
+
+            .child-div {
+                background-color: #4B8B89;
+            }
+        }
+    }
+
+    &__container {
+        .c-card-selos {
+            
+            &:nth-child(odd) {
+                grid-template-columns: 380px auto;
+                .c-card-selos__image {
+                    &::after {
+                        transform: translate(-34%, -34%);
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                grid-template-columns: auto 380px;
+                .c-card-selos__image {
+                    &::after {
+                        transform: translate(-64%, -34%);
+                    }
+                }
+
+                .c-card-selos__head {
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+            
+            }
+        }
+    }
+}

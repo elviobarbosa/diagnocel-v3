@@ -3,17 +3,17 @@ import Carrosel from './components/carrosel';
 import Menu from './components/menu';
 import MenuCategories from './components/menu-categories';
 import Accordeon from './components/accordeon';
+import SquareDetails from './components/square-details'
 
 
 function domReady(fn) {
-    // If we're early to the party
     document.addEventListener("DOMContentLoaded", fn);
-    // If late; I mean on time.
     if (document.readyState === "interactive" || document.readyState === "complete" ) {
       new Menu();
       new Carrosel();
       new MenuCategories();
       new Accordeon();
+      new SquareDetails();
     }
 }
 

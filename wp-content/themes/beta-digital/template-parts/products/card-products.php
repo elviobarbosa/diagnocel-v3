@@ -18,12 +18,13 @@ $terms = get_terms( array(
     $post_terms = join(',', wp_list_pluck($post_cat, 'slug'));
 ?>
 <div class="c-card-products">
+    <div class="c-square-detail"></div>
     <div class="c-card-products__head">
         <div class="c-card-products__brand">
             <figure>
                 <?php echo get_the_post_thumbnail( $partner[0]->ID, 'brand' ); ?>
             </figure>
-            <div class="c-square-detail"></div>
+           
         </div>
 
         <div class="c-card-products__image">
@@ -37,11 +38,11 @@ $terms = get_terms( array(
         <h2 class="c-card-products__name">
             <a href="<?php echo $args['guid'] ?>" alt="Veja mais detalhes do produto: <?php echo $args['title'] ?>"><?php echo $args['title'] ?></a>
         </h2>
-        <div class="c-card-products__resume">
+        <!-- <div class="c-card-products__resume">
             <p>
                 <a href="<?php echo $args['guid'] ?>" alt="Veja mais detalhes do produto: <?php echo $args['title'] ?>"><?php echo $args['resume'] ?></a>
             </p>
-        </div>
+        </div> -->
     </div>
 
 </div>

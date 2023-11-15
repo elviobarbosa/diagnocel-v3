@@ -1,24 +1,17 @@
 <?php
 get_header();
-//$desktop = ( !wp_is_mobile() ) ? 'single-products__desktop' : '';
 
 $categories = get_terms( array(
     'taxonomy' => 'prod_category',
     'parent'   => 0, 
 ) );
-
 ?>
-<?php //get_template_part('template-parts/components/cta') ?>
-<?php //get_template_part('template-parts/products/contact') ?>
+
 <div class="prod-category" data-js="menu-prod-category">
     <?php
-    // if (wp_is_mobile()) {
-    //     get_template_part('template-parts/products/dropdown-filter');
-    // } else {
-            get_template_part('template-parts/products/menu-categories', null, [
-            'categories' => $categories
-            ]);
-    // }
+        get_template_part('template-parts/products/menu-categories', null, [
+        'categories' => $categories
+        ]);
     ?>
 </div>
 <main <?php post_class('archive-products ') ?>>
@@ -35,8 +28,6 @@ $categories = get_terms( array(
                     <div class="microbiologia">
                         <div class="microbiologia__grid">
                         <?php
-
-                            
                             if (have_rows('categorias', $microbiologia_id)) {
                                 while (have_rows('categorias', $microbiologia_id)) {
                                     the_row();
@@ -71,9 +62,9 @@ $categories = get_terms( array(
                     <div class="archive-products__category-head">
                         <h2 class="archive-products__category-name"><?php echo $category->name ?></h2>
                         <?php
-                            if ( $total > 4) :
+                            if ($total > 4) :
                             ?>
-                            <a class="archive-products__category-link" href="<?php echo $category->slug ?>">Ver todos <span><?php echo $total ?></span></a>
+                            <a class="archive-products__category-link" href="<?php echo site_url('/produtos-por-categoria/') . $category->slug ?>">Ver todos <span><?php echo $total ?></span></a>
                             <?php
                             endif;
                         ?>

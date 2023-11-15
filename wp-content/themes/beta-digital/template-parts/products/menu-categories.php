@@ -5,7 +5,7 @@
     ?>
     <li>
         <a 
-        href="/produtos-por-categoria/<?php echo $category->slug ?>" 
+        href="<?php echo site_url('/produtos-por-categoria/') . $category->slug ?>" 
         title="Ver produtos por categoria: <?php echo $category->name ?>">
         <?php echo $category->name ?>
         </a>

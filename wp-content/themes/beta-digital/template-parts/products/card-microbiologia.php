@@ -13,7 +13,6 @@
         <h2 class="c-card-products__name">
             <a href="<?php echo $args['guid'] ?>" alt="Veja mais detalhes do produto: <?php echo $args['title'] ?>"><?php echo $args['title'] ?></a>
         </h2>
-        
     </div>
 
 </div>

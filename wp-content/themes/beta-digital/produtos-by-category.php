@@ -30,7 +30,7 @@ $categories = get_terms( array(
     <article class="archive-products__container">
         <?php
         if ($product_cat && !is_wp_error($product_cat)) :
-            foreach ($post_size_categories as $post_size_category) :
+            //foreach ($post_size_categories as $post_size_category) :
 
                 $category_posts = get_posts(array(
                     'post_type' => 'post_produtos',
@@ -42,18 +42,18 @@ $categories = get_terms( array(
                             'field' => 'term_id',
                             'terms' => $product_cat->term_id,
                         ),
-                        array(
-                            'taxonomy' => 'prod-size_category',
-                            'field' => 'term_id',
-                            'terms' => $post_size_category->term_id,
-                        ),
+                        // array(
+                        //     'taxonomy' => 'prod-size_category',
+                        //     'field' => 'term_id',
+                        //     'terms' => $post_size_category->term_id,
+                        // ),
                     ),
                 ));
                 if ($category_posts) :
                     ?>
-                    <div class="archive-products__category-head">
+                    <!-- <div class="archive-products__category-head">
                         <h2 class="archive-products__subcategory-name"><?php echo $post_size_category->name ?></h2>
-                    </div>
+                    </div> -->
                     <div class="archive-products__grid">
                         <?php foreach ($category_posts as $post) : ?>
                             <?php
@@ -66,8 +66,9 @@ $categories = get_terms( array(
                             ?>
                         <?php endforeach; ?>
                     </div>
-                <?php endif;
-            endforeach;
+                    <?php 
+                endif;
+            //endforeach;
         endif;
         ?>
     </article>

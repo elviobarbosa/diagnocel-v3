@@ -27,9 +27,7 @@ $categories = get_terms( array(
                     </ul>
 
                     <ul class="footer__selos">
-                        <li><img src="<?php echo IMGPATH ?>selo-voluntariado.png" alt="Grupo Voluntariado"></li>
                         <li><img src="<?php echo IMGPATH ?>selo-plante-arvore.png" alt="Plante uma árvore"></li>
-                        <li><img src="<?php echo IMGPATH ?>selo-site-sustentavel.png" alt="Site sustentável"></li>
                         <li><img src="<?php echo IMGPATH ?>selo-chico-mendes.png" alt="Instituto Chico Mendes"></li>    
                         <li><img src="<?php echo IMGPATH ?>selo-anvisa.png" alt="Anvisa"></li>
 

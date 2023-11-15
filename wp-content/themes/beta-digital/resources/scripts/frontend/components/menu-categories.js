@@ -40,12 +40,14 @@ export default class MenuCategories {
         moveItemsToSubmenu();
 
         window.addEventListener('scroll', () => {
-            console.log(window.pageYOffset,  $container[0].offsetTop);
-            if (window.pageYOffset > $container[0].offsetTop - 100) {
-                $container.addClass('prod-category__fixed');
-            } else {
-                $container.removeClass('prod-category__fixed');
+            if ($container && $container.length > 0) {
+                if (window.pageYOffset > $container[0].offsetTop - 100) {
+                    $container.addClass('prod-category__fixed');
+                } else {
+                    $container.removeClass('prod-category__fixed');
+                }
             }
+            
         })
 
         $(window).on('resize', moveItemsToSubmenu);

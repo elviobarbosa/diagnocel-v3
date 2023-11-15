@@ -790,6 +790,13 @@ textarea:focus {
   width: 95vw;
   margin: 40px auto;
 }
+.prod-category__fixed {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
 
 .menu-categories {
   padding: 0;
@@ -856,6 +863,7 @@ textarea:focus {
   -moz-border-radius-bottomright: 12px;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+  z-index: 2;
 }
 .menu-categories__more:hover .menu-categories__submenu {
   display: block;

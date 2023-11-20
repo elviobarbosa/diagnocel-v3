@@ -1,34 +1,16 @@
 <?php 
 function setup() {
-    //limpa do wp_head removendo tags desnecessárias
-    remove_action('wp_head', 'rsd_link');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'start_post_rel_link');
-    remove_action('wp_head', 'index_rel_link');
-    remove_action('wp_head', 'adjacent_posts_rel_link');
-    remove_action('wp_head', 'wp_shortlink_wp_head');
-
-    //remove smart quotes
-    remove_filter('the_title', 'wptexturize');
-    remove_filter('the_content', 'wptexturize');
-    remove_filter('the_excerpt', 'wptexturize');
-    remove_filter('comment_text', 'wptexturize');
-    remove_filter('list_cats', 'wptexturize');
-    remove_filter('single_post_title', 'wptexturize');
-
-    add_filter( 'wp_mail_from', 'sender_email' );
-    function sender_email( $original_email_address ) {
+    add_filter( 'wp_mail_from', 'sender_custom_email' );
+    function sender_custom_email( $original_email_address ) {
         $domain = str_replace(['http://', 'https://'], '', get_blog_info('url'));
         return 'noreply@' . $domain;
     }
 
-    add_filter( 'wp_mail_from_name', 'sender_name' );
-    function sender_name( $original_email_from ) {
+    add_filter( 'wp_mail_from_name', 'sender_custom_name' );
+    function sender_custom_name( $original_email_from ) {
         return get_bloginfo('name');
     }
 
-    // setup
     if (function_exists('acf_add_options_page')) :
         acf_add_options_page();
     endif;
@@ -40,10 +22,9 @@ function setup() {
 function register_custom_image_sizes() {
     if ( ! current_theme_supports( 'post-thumbnails' ) ) {
         add_theme_support( 'post-thumbnails' );
-       //add_theme_support( 'main-image' );
         add_theme_support( 'brand' );
         add_theme_support( 'product-thumb' );
-       add_theme_support( 'produtct-full' );
+        add_theme_support( 'product-full' );
     }
     add_image_size( 'brand', 300, 30, false);
     add_image_size( 'main-image-mobile', 350, 263, true);
@@ -63,16 +44,11 @@ function add_custom_image_sizes( $sizes ) {
 add_filter( 'image_size_names_choose', 'add_custom_image_sizes' );
 
 function add_custom_body_class($classes) {
-    if (is_page('biocore')) {
-        $classes[] = 'page-biocore';
-    }
-
-    if (is_page('sustentabilidade')) {
-        $classes[] = 'page-sustentabilidade';
-    }
-
-    if (is_page('diagnocel')) {
-        $classes[] = 'page-diagnocel';
+    $page_slugs = ['biocore', 'sustentabilidade', 'diagnocel'];
+    foreach ($page_slugs as $slug) {
+        if (is_page($slug)) {
+            $classes[] = 'page-' . $slug;
+        }
     }
     return $classes;
 }
@@ -100,4 +76,34 @@ function custom_taxonomy_template( $template ) {
 }
 add_filter( 'template_include', 'custom_taxonomy_template' );
 
-add_action( 'init', 'setup' );
+function add_submenu_prod_cat($items, $args) {
+    $menu_locations = get_nav_menu_locations();
+
+    if ($args->theme_location == 'header-menu' && isset($menu_locations['header-menu'])) {
+        foreach ($items as $item) {
+            if ($item->title === 'Produtos') {
+                $terms = get_terms('prod_category');
+                $submenu_items = [];
+
+
+                if (!empty($terms)) {
+                    $item->classes[] = 'menu-item-has-children';
+                    foreach ($terms as $term) {
+                        $submenu_item = array (
+                            'title'            => $term->name,
+                            'menu_item_parent' => $item->ID,
+                            'ID'               => $term->term_id,
+                            'db_id'            => count($submenu_items) + 1,
+                            'url'              => get_term_link($term)
+                        );
+
+                        $items[] = (object) $submenu_item;
+                        
+                    }
+                }
+            }
+        }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'add_submenu_prod_cat', 10, 2);

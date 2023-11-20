@@ -15,7 +15,7 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		overflow: hidden;
+	
 	}
 
 	&__menu {
@@ -27,7 +27,6 @@
 		background: white;
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
 		height: 100vh;
 		top: 0;
 		display: flex;
@@ -39,6 +38,8 @@
 			height: auto;
 			right: unset;
 		}
+
+		
 	}
 
 	&__social {
@@ -53,6 +54,22 @@
 
 	nav.main-menu {
 		width: 100%;
+		
+		#menu-header-menu > .menu-item-has-children {
+			background-image: url($imgpath + '/seta-submenu.png');
+			background-repeat: no-repeat;
+			background-position: 100% 50%;
+			padding-right: 20px;
+			background-size: 10px;
+
+			&:hover {
+				background-color: white;
+				> .sub-menu {
+					display: inline-block;
+				}
+			}
+		}
+		
 
 		ul {
 			@include min-xl {
@@ -60,6 +77,30 @@
 				padding: 0;
 				margin: 0;
 				align-items: center;
+
+				.sub-menu {
+					display: inline-block;
+					position: absolute;
+					max-height: 350px;
+					overflow-y: auto;
+					top: 18px;
+					left: 0;
+					background-color: $primary-color;
+					padding: 8px;
+					min-width: 200px;
+					display: none;
+
+					li {
+						padding: 5px 0;
+						a {
+							color: white;
+
+							&:hover {
+								color: white;
+							}
+						}
+					}
+				}
 			}
 			
 
@@ -68,6 +109,7 @@
 					list-style: none;
 					font-size: px-rem(14px);
 					font-weight: 700;
+					position: relative;
 				}
 
 				a {

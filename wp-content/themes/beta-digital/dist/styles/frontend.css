@@ -438,7 +438,6 @@ textarea:focus {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
 }
 .nav-container__menu {
   position: fixed;
@@ -449,7 +448,6 @@ textarea:focus {
   background: white;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100vh;
   top: 0;
   display: flex;
@@ -474,6 +472,19 @@ textarea:focus {
 .nav-container nav.main-menu {
   width: 100%;
 }
+.nav-container nav.main-menu #menu-header-menu > .menu-item-has-children {
+  background-image: url(../scripts/./resources/images/seta-submenu.png);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  padding-right: 20px;
+  background-size: 10px;
+}
+.nav-container nav.main-menu #menu-header-menu > .menu-item-has-children:hover {
+  background-color: white;
+}
+.nav-container nav.main-menu #menu-header-menu > .menu-item-has-children:hover > .sub-menu {
+  display: inline-block;
+}
 @media (min-width: 1200px) {
   .nav-container nav.main-menu ul {
     display: flex;
@@ -481,12 +492,34 @@ textarea:focus {
     margin: 0;
     align-items: center;
   }
+  .nav-container nav.main-menu ul .sub-menu {
+    display: inline-block;
+    position: absolute;
+    max-height: 350px;
+    overflow-y: auto;
+    top: 18px;
+    left: 0;
+    background-color: #2F3188;
+    padding: 8px;
+    min-width: 200px;
+    display: none;
+  }
+  .nav-container nav.main-menu ul .sub-menu li {
+    padding: 5px 0;
+  }
+  .nav-container nav.main-menu ul .sub-menu li a {
+    color: white;
+  }
+  .nav-container nav.main-menu ul .sub-menu li a:hover {
+    color: white;
+  }
 }
 @media (min-width: 1200px) {
   .nav-container nav.main-menu ul li {
     list-style: none;
     font-size: 0.875rem;
     font-weight: 700;
+    position: relative;
   }
 }
 .nav-container nav.main-menu ul li a {

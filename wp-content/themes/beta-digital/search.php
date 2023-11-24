@@ -6,32 +6,33 @@ $argsCat = array(
 )
 ?>
 
-<section <?php post_class('blog') ?>>
+<section class="search__container" >
 
-    <h1 class="container">Você pesquisou por: <?php echo get_search_query();; ?></h1>
-    <br><br>
+    <h1 class="search__title-page">Você pesquisou por: <span><?php echo get_search_query(); ?></span></h1>
 
-    <div class="container blog__container">
-        <div class="blog__posts">
+    <div class="">
+        <div class="search__posts">
 			<?php if ( have_posts() ) { while ( have_posts() ) : the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" class="blog__article">
+				<article id="post-<?php the_ID(); ?>" class="search__article">
 					<?php if (has_post_thumbnail()) : ?>
-					<figure class="blog__image">
-						<a class="blog__link" href="<?php the_permalink(); ?>">
+					<figure class="search__image">
+						<a class="search__link" href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail() ?>
 						</a>
 					</figure>
+					<?php else: ?>
+						<div class="no-image"></div>
 					<?php endif; ?>
 
-					<div class="blog__content">
+					<div class="search__content">
 						<time 
-							class="blog__date" 
+							class="search__date" 
 							datetime="<?php echo get_the_date( 'Y-d-m' ) ?> <?php the_time( 'H:i:s' ) ?>">
 							<?php echo get_the_date( 'j M Y' ) ?>
 						</time> 
-						<a class="blog__link" href="<?php the_permalink(); ?>">
-							<h2 class="blog__title"><?php the_title() ?></h2>
-							<p class="blog__excerpet"><?php echo getExcerpt(200, $post->ID) ?></p>
+						<a class="search__link" href="<?php the_permalink(); ?>">
+							<h2 class="search__title"><?php the_title() ?></h2>
+							<p class="search__excerpet"><?php echo getExcerpt(200, $post->ID) ?></p>
 						</a>
 					</div>
 				</article>
@@ -40,7 +41,7 @@ $argsCat = array(
 			<h2>Não há nenhum resultado pra sua busca.</h2>
 			<?php }; ?>            
         </div>
-        <?php get_template_part( 'template-parts/blog/blog-sidebar', null ); ?>
+
     </div>
 	<?php
 	the_posts_pagination( array(

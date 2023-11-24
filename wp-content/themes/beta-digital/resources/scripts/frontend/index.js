@@ -3,7 +3,8 @@ import Carrosel from './components/carrosel';
 import Menu from './components/menu';
 import MenuCategories from './components/menu-categories';
 import Accordeon from './components/accordeon';
-import SquareDetails from './components/square-details'
+import SquareDetails from './components/square-details';
+import InputMasks from './components/input-masks';
 
 
 function domReady(fn) {
@@ -14,6 +15,7 @@ function domReady(fn) {
       new MenuCategories();
       new Accordeon();
       new SquareDetails();
+      new InputMasks();
     }
 }
 

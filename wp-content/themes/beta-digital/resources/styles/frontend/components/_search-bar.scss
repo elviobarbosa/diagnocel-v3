@@ -1,0 +1,24 @@
+.search-bar {
+    
+    padding: 0;
+    margin: 0;
+    display: flex;
+    max-width: 120px;
+
+    input {
+        border: none;
+        background-color: transparent;
+    }
+
+    #search-input {
+        width: calc(100% - 30px);
+    }
+
+    #searchsubmit {
+        background-image: url($imgpath + '/ico-search.png');
+        background-repeat: no-repeat;
+        background-size: 15px;
+        background-position: 90% 50%;
+        width: 20px;
+    }
+}

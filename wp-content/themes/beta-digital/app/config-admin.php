@@ -1,14 +1,12 @@
 <?php
-// Adiciona o filtro de taxonomia à listagem do Custom Post Type no admin
+
 function adicionar_filtro_taxonomia_post_produtos() {
     global $typenow;
 
-    // Verifica se estamos na tela do seu Custom Post Type
     if ($typenow == 'post_produtos') {
-        // Obtém a lista de termos da taxonomia 'prod_category'
+
         $termos = get_terms('prod_category');
 
-        // Exibe o menu suspenso do filtro
         echo '<select name="prod_category_filtro">';
         echo '<option value="">Todas as Categorias</option>';
 
@@ -21,15 +19,12 @@ function adicionar_filtro_taxonomia_post_produtos() {
     }
 }
 
-// Adiciona a ação para exibir o filtro de taxonomia
 add_action('restrict_manage_posts', 'adicionar_filtro_taxonomia_post_produtos');
 
-// Processa o filtro quando ele é aplicado
 function aplicar_filtro_taxonomia_post_produtos($query) {
     global $pagenow;
     $tipo_post = 'post_produtos';
 
-    // Verifica se estamos na tela correta e se o filtro está definido
     if ($pagenow == 'edit.php' && isset($_GET['prod_category_filtro']) && $_GET['prod_category_filtro'] != '') {
         $termo_slug = $_GET['prod_category_filtro'];
         $tax_query = array(
@@ -44,5 +39,4 @@ function aplicar_filtro_taxonomia_post_produtos($query) {
     }
 }
 
-// Adiciona a ação para processar o filtro de taxonomia
 add_action('pre_get_posts', 'aplicar_filtro_taxonomia_post_produtos');

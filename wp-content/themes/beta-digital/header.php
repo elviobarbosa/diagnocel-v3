@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php
-	if('post_empreendimentos' != get_post_type() ){
+	if('post_produtos' != get_post_type() ){
 		add_action( 'wpcf7_enqueue_styles', function() { wp_deregister_style( 'contact-form-7' ); } );
 		add_action( 'wpcf7_enqueue_scripts', function() { wp_deregister_script( 'jquery-form' ); } );
 		add_action( 'wpcf7_enqueue_scripts', function() { wp_deregister_script( 'contact-form-7' ); } );
@@ -60,6 +60,20 @@
 		</div>
 	</div>
  </div>
+
+ <!-- <div class="search-bar">
+	<form 
+		role="search" 
+		method="get" 
+		id="searchform" 
+		class="searchform" 
+		action="<?php echo esc_url( home_url( '/' ) ); ?>" >
+		<div>
+			<input type="text" value="" name="s" id="s" placeholder="Buscar" data-msg-required="" required>
+			<input type="submit" id="searchsubmit" value="Pesquisar">
+		</div>
+	</form>
+ </div> -->
 
  <?php
 if ( function_exists('yoast_breadcrumb') ) {

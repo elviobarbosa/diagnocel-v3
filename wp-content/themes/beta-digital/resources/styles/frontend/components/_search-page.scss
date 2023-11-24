@@ -1,0 +1,62 @@
+.search {
+    &__container {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    &__title-page {
+        @include fluid-size(font-size, 30px, 45px);
+        color: $primary-color;
+        font-weight: 300;
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__article {
+        display: flex;
+        align-items: center;
+        gap: px-rem(30px);
+        margin-top: px-rem(30px);
+        margin-bottom: px-rem(30px);
+        padding:  px-rem(20px);
+        @include border-radius(30px);
+        background-color: white;
+
+    }
+
+    &__image {
+        width: 200px;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+        }
+    }
+
+    &__content {
+        width: calc(100% - 200px);
+    }
+
+    &__date {
+        color: $gray-500;
+        font-size: 16px;
+    }
+
+    &__title {
+        color: $secondary-color;
+        @include fluid-size(font-size, 24px, 30px);
+        font-weight: 300;
+    }
+
+    &__excerpet {
+        color: $primary-color;
+        font-size: 18px;
+        max-width: 90%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+   
+}

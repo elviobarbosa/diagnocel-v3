@@ -102,6 +102,16 @@ function add_submenu_prod_cat($items, $args) {
                     }
                 }
             }
+
+            if ($item->title === 'Busca') {
+                $item->classes[] = 'search-menu-item';
+                $item->title = '';
+                ob_start();
+                get_search_form();
+                $search_form = ob_get_clean();
+
+                $item->title .= $search_form;
+            }
         }
     }
     return $items;

@@ -90,8 +90,6 @@ while ( have_posts() ) : the_post();
                                     <svg class="" viewBox="0 0 14 8">
                                         <use href="<?php echo SVGPATH ?>arrow-down"></use>
                                     </svg>
-                                    <!-- <span class="c-accordeon__plus accordeon-open"><img src="<?php echo IMGPATH?>svg/plus.svg"></span>
-                                    <span class="c-accordeon__minus accordeon-close"><img src="<?php echo IMGPATH?>svg/minus.svg"></span> -->
                                 </div>
                             </div>
 
@@ -109,6 +107,11 @@ while ( have_posts() ) : the_post();
             <?php endif ?>
             
         </article>
+
+        <div class="form-contato">
+            <h2 class="form-contato__title">Fale conosco</h2>
+            <?php echo do_shortcode('[contact-form-7 id="40f695f" title="Contato"]') ?>
+        </div>
         
         <?php get_template_part('template-parts/products/products-related', null, [
             'post'  => $post,

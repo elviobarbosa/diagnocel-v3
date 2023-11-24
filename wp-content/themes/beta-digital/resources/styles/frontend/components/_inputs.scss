@@ -1,9 +1,13 @@
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+select,
 textarea {
-     
-
+   border: 1px solid $gray-200;
+   font-size: 16px;
+   padding: 10px;
+   width: 100%;
+   box-sizing: border-box;
    &:focus {
       outline: none; 
   }
@@ -20,4 +24,34 @@ textarea {
 
 ::placeholder {
    
+}
+
+.wpcf7-not-valid-tip {
+   font-size: 14px;
+   color: $secondary-color;
+}
+
+.invalid .wpcf7-response-output {
+   background-color: #fcb900;
+}
+
+.sent .wpcf7-response-output {
+   background-color: #46b450;
+   color: white;
+}
+
+.wpcf7-response-output {
+   position: fixed;
+   bottom: 11px;
+   z-index: 999;
+   box-sizing: border-box;
+   border: none;
+   padding: 10px;
+   border-radius: 12px;
+   width: 90vw;
+   margin: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   border: none;
 }

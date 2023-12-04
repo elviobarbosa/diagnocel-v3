@@ -63,7 +63,7 @@
 
     &__cover {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% auto;
         grid-gap: 40px;
         width: 95vw;
         max-width: 1366px;
@@ -120,17 +120,44 @@
 
     &__image {
         background-color: white;
-        padding: 30px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+       
+        width: 100%;
+        position: relative;
+        max-width: 640px;
+        overflow: hidden;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
         max-height: px-rem(500px);
         box-sizing: border-box;
+
+        figure {
+            max-width: 90%;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
 
         img {
             height: 90%;
             width: auto;
-            max-width: 90%;
+            max-width: 100%;
+        }
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 500px;
+    }
+
+    .swiper-button-next, 
+    .swiper-button-prev
+    {
+        color: $primary-color;
+
+        &:hover {
+            color: $secondary-color;
         }
     }
 
@@ -144,6 +171,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 10;
 
         figure {
             padding: 0;

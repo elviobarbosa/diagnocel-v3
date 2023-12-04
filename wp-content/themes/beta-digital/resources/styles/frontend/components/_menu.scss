@@ -63,7 +63,8 @@
 			&:hover {
 				background-color: white;
 				> .sub-menu {
-					display: inline-block;
+					display: grid;
+					z-index: 99;
 				}
 			}
 		}
@@ -77,9 +78,10 @@
 				align-items: center;
 
 				.sub-menu {
-					display: inline-block;
+					grid-template-columns: 1fr 1fr;
+					width: 450px;
 					position: absolute;
-					max-height: 350px;
+					max-height: 355px;
 					overflow-y: auto;
 					top: 18px;
 					left: 0;
@@ -117,7 +119,7 @@
 				}
 
 				a:hover {
-					color: $primary-color;
+					
 					transition: all .5s;
 
 					&::after {
@@ -142,12 +144,7 @@
 					transition: all .5s;
 					position: relative;
 					display: inline-block;
-
-					
-
 				}
-
-				
 			}
 
 			li:not(:last-child) {

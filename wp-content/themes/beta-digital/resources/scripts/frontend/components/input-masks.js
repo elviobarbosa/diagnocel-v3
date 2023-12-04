@@ -13,7 +13,6 @@ export default class InputMasks {
     }
 
     init() {
-        console.log(this.selector)
         const form = document.querySelector(this.selector);
 
         if (form) {
@@ -32,9 +31,9 @@ export default class InputMasks {
 
                 setTimeout(function() {
                     let value = phoneVal.value;
-                    value = value.replace(/\D/g,""); //Remove tudo o que não é dígito
-                    value = value.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-                    value = value.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+                    value = value.replace(/\D/g,""); 
+                    value = value.replace(/^(\d{2})(\d)/g,"($1) $2"); 
+                    value = value.replace(/(\d)(\d{4})$/,"$1-$2"); 
                     phoneVal.value = value;
                 }, 1)
             });
@@ -50,7 +49,7 @@ export default class InputMasks {
 
                 setTimeout(function() {
                     let value = cpfVal.value;
-                    value = value.replace(/\D/g,""); //Remove tudo o que não é dígito
+                    value = value.replace(/\D/g,"");
                     value = value.replace(/(\d{3})(\d)/,"$1.$2");
                     value = value.replace(/(\d{3})(\d)/,"$1.$2"); 
                     value = value.replace(/(\d{3})(\d{1,2})$/,"$1-$2"); 
@@ -69,11 +68,11 @@ export default class InputMasks {
 
                 setTimeout(function() {
                     let value = cnpjVal.value;
-                    value = value.replace(/\D/g,""); //Remove tudo o que não é dígito
-                    value = value.replace(/^(\d{2})(\d)/,"$1.$2"); //Coloca ponto entre o segundo e o terceiro dígitos
-                    value = value.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3"); //Coloca ponto entre o quinto e o sexto dígitos
-                    value = value.replace(/\.(\d{3})(\d)/,".$1/$2"); //Coloca barra entre o oitavo e o nono dígitos
-                    value = value.replace(/(\d{4})(\d)/,"$1-$2"); //Coloca hífen entre o décimo segundo e o décimo terceiro dígitos
+                    value = value.replace(/\D/g,"");
+                    value = value.replace(/^(\d{2})(\d)/,"$1.$2"); 
+                    value = value.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3"); 
+                    value = value.replace(/\.(\d{3})(\d)/,".$1/$2"); 
+                    value = value.replace(/(\d{4})(\d)/,"$1-$2");
                     cnpjVal.value = value;
                 }, 1)
             });

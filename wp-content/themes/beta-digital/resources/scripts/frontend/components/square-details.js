@@ -16,7 +16,6 @@ export default class SquareDetails {
     }
 
     adicionarSquareDetails(containers) {
-        console.log('squale');
         containers.forEach((container) => {
             const squareDetails = $('<div>').addClass('square-details');
 

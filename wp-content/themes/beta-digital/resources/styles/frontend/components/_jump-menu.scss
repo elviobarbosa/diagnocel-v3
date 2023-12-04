@@ -1,0 +1,44 @@
+.jump-menu {
+    background: $primary-color;
+    position: fixed;
+    z-index: 99;
+    padding: 10px 20px;
+    @include border-radius(12px);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 145px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 15px;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+
+            a {
+                color: white;
+            }
+
+            a:link {
+                text-decoration: none;
+            }
+
+            a:active {
+                color: white;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

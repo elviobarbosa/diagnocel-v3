@@ -5,6 +5,7 @@ import MenuCategories from './components/menu-categories';
 import Accordeon from './components/accordeon';
 import SquareDetails from './components/square-details';
 import InputMasks from './components/input-masks';
+import ScrollTo from './components/scroll-to';
 
 
 function domReady(fn) {
@@ -16,6 +17,7 @@ function domReady(fn) {
       new Accordeon();
       new SquareDetails();
       new InputMasks();
+      new ScrollTo();
     }
 }
 

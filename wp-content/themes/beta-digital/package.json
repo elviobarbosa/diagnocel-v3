@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "jquery": "^3.6.1",
-    "swiper": "^11.0.3"
+    "swiper": "8.4.0"
   }
 }

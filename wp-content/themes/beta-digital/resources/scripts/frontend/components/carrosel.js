@@ -1,4 +1,5 @@
-import Swiper from 'swiper';
+import { Swiper, Navigation} from 'swiper';
+Swiper.use([ Navigation ])
 export default class Carrosel {
     constructor() {
         this.selector = '.swiper';
@@ -18,9 +19,8 @@ export default class Carrosel {
         const swiperClass = `js-swiper-${i}`;
         const params = (sliderEl.dataset.params) ? JSON.parse(sliderEl.dataset.params) : {};
 
-        // adding class to separate each swiper
         sliderEl.classList.add(swiperClass);
-        // For multiple swipers on a same page it is necessary to call different instances
+        
         sliders = [
             ...sliders,
             new Swiper(`.${swiperClass}`, {

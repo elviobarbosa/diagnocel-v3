@@ -7,7 +7,6 @@ export default class Tabs {
 
     init() {
         const selectors = document.querySelectorAll(this.selector);
-
         if (selectors.length > 0) {
             this.start(selectors);
         }
@@ -15,14 +14,15 @@ export default class Tabs {
 
     start(elements) {
         elements.forEach(el => {
-            console.log(el);
             const tabs = el.querySelectorAll('.tablinks');
             const showTab = (ev) => {
                 const { tab } = ev.currentTarget.dataset;
                 let i, tabcontent, tablinks;
-            
-                tabcontent = el.getElementsByClassName('tabcontent');
+                console.log(document.querySelectorAll('.tabcontent'))
+                tabcontent = document.querySelectorAll('.tabcontent');
+                console.log(tabcontent, tabcontent.length)
                 for (i = 0; i < tabcontent.length; i++) {
+                    console.log(i, 'nom');
                     tabcontent[i].style.display = 'none';
                 }
             

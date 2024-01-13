@@ -8,6 +8,12 @@
     transform: translateX(-50%);
     top: 145px;
 
+    &.jump-fixed {
+        top: 77px;
+        width: 100%;
+        transition: all .5s;
+    }
+
     &__list {
         display: flex;
         align-items: center;

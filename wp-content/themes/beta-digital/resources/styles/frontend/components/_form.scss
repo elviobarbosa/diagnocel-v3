@@ -5,6 +5,8 @@
         width: 50%;
         column-gap: 20px;
     }
+
+    
 }
 
 .form-contato {
@@ -29,7 +31,19 @@
         font-size: 16px;
     }
 
+    
+    
+
     form > p {
         text-align: right;
+    }
+}
+
+.wpcf7-form {
+    padding-bottom: 20px;
+    .form__btn {
+        p {
+        text-align: right;
+        }
     }
 }

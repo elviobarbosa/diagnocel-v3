@@ -87,6 +87,11 @@ h1, h2, h3, h4, h5 {
   font-family: "Nunito Sans", sans-serif;
 }
 
+.page-title {
+  color: #2F3188;
+  font-weight: 300;
+}
+
 figure {
   padding: 0;
   margin: 0;
@@ -423,6 +428,13 @@ textarea:focus {
   outline: none;
 }
 
+input[type=submit] {
+  background-color: #2F3188;
+  border: 0;
+  color: white;
+  padding: 10px 30px;
+}
+
 ::-webkit-input-placeholder { /* Edge */ }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ }
@@ -475,6 +487,9 @@ textarea:focus {
   left: 0;
   position: fixed;
   top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: all 0.5s;
 }
 .nav-container__container {
   align-items: center;
@@ -666,6 +681,9 @@ textarea:focus {
   position: relative;
   overflow: hidden;
 }
+.c-card-products.hidden {
+  display: none;
+}
 .c-card-products .c-square-detail {
   position: absolute;
   z-index: 1;
@@ -789,6 +807,7 @@ textarea:focus {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding-bottom: 3.75rem;
+  width: 70vw;
 }
 .archive-products__category-head {
   display: flex;
@@ -858,6 +877,32 @@ textarea:focus {
   text-align: center;
   justify-content: center;
   margin-left: 10px;
+}
+.archive-products__container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.archive-products__sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+.archive-products__sidebar li {
+  list-style: none;
+  color: #2F3188;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+  padding-left: 0.3rem;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  transition: all 0.5s;
+}
+.archive-products__sidebar li:hover {
+  background-color: #2F3188;
+  transition: all 0.5s;
+  color: white;
 }
 
 .prod-category {
@@ -1558,6 +1603,13 @@ textarea:focus {
   text-align: right;
 }
 
+.wpcf7-form {
+  padding-bottom: 20px;
+}
+.wpcf7-form .form__btn p {
+  text-align: right;
+}
+
 .jump-menu {
   background: #2F3188;
   position: fixed;
@@ -1569,6 +1621,11 @@ textarea:focus {
   left: 50%;
   transform: translateX(-50%);
   top: 145px;
+}
+.jump-menu.jump-fixed {
+  top: 77px;
+  width: 100%;
+  transition: all 0.5s;
 }
 .jump-menu__list {
   display: flex;
@@ -1597,6 +1654,111 @@ textarea:focus {
 .jump-menu__list li a:visited {
   color: white;
   text-decoration: none;
+}
+
+.contato .tabcontent {
+  display: none;
+}
+.contato__tabs-container {
+  max-width: 1366px;
+  width: 90vw;
+  margin: 0 auto 40px auto;
+}
+.contato__tabs {
+  display: flex;
+  column-gap: 20px;
+}
+.contato__title {
+  text-align: center;
+}
+.contato__tablink {
+  background-color: white;
+  font-size: 1.5rem;
+  max-height: 205px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.contato__tablink h3 {
+  font-weight: 300;
+  color: #2F3188;
+  padding: 0;
+  margin: 0;
+}
+.contato__tablink svg {
+  width: 100%;
+  transition: all 0.5s;
+}
+.contato__svg {
+  width: 24px;
+}
+.contato__tab {
+  width: 25%;
+}
+.contato__tab.active::after {
+  content: "";
+  background-color: white;
+  height: 10px;
+  height: 30px;
+  width: 100%;
+  display: block;
+  transition: all 0.5s;
+}
+.contato__tab.active svg {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+.contato__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contato__tab-content {
+  background-color: white;
+  padding: 0 3rem;
+}
+.contato__tab-content input, .contato__tab-content select {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+.contato__address {
+  background-color: white;
+  max-width: 1366px;
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  padding: 30px 0;
+  border-top: 1px solid #A2A2A2;
+}
+.contato__address-column h3 {
+  color: #2F3188;
+  font-weight: 500;
+}
+.contato__address-column ul {
+  padding: 0;
+  margin: 0;
+}
+.contato__address-column ul li {
+  list-style: none;
+}
+.contato__address-column ul li a {
+  color: #2F3188;
+  text-decoration: none;
+  font-size: 14px;
+}
+.contato__address-column ul li a:not(.contato__address-map) {
+  color: #676767;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 .archive-products .bg-square {

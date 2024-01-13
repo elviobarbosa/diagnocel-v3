@@ -18,6 +18,12 @@ h1, h2, h3, h4, h5 {
     font-family: $headings;
 }
 
+.page-title {
+	color: $primary-color;
+	font-weight: 300;
+		
+}
+
 figure {
 	padding: 0;
 	margin: 0;

@@ -17,7 +17,7 @@ $terms = get_terms( array(
     }
     $post_terms = join(',', wp_list_pluck($post_cat, 'slug'));
 ?>
-<div class="c-card-products">
+<div class="c-card-products product" data-id="<?php echo $args['ID'] ?>">
     <div class="c-square-detail"></div>
     <div class="c-card-products__head">
         <div class="c-card-products__brand">

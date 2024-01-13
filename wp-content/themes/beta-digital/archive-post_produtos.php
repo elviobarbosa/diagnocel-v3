@@ -7,13 +7,6 @@ $categories = get_terms( array(
 ) );
 ?>
 
-<div class="prod-category" data-js="menu-prod-category">
-    <?php
-        get_template_part('template-parts/products/menu-categories', null, [
-        'categories' => $categories
-        ]);
-    ?>
-</div>
 <main <?php post_class('archive-products ') ?>>
     <div class="bg-square"></div>
     <article class="archive-products__container">

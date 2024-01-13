@@ -6,6 +6,8 @@ import Accordeon from './components/accordeon';
 import SquareDetails from './components/square-details';
 import InputMasks from './components/input-masks';
 import ScrollTo from './components/scroll-to';
+import SidebarProducts from './components/sidebar-products';
+import Tabs from './components/tabs';
 
 
 function domReady(fn) {
@@ -18,6 +20,8 @@ function domReady(fn) {
       new SquareDetails();
       new InputMasks();
       new ScrollTo();
+      new SidebarProducts();
+      new Tabs()
     }
 }
 

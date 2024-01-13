@@ -1,0 +1,127 @@
+.contato {
+    .tabcontent {
+        display: none;
+    }
+    &__tabs-container {
+        max-width: $max-width;
+        width: 90vw;
+        margin: 0 auto 40px auto;
+    }
+
+    &__tabs {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__tablink {
+        background-color: white;
+        font-size: px-rem(24px);
+        max-height: 205px;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: px-rem(15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        h3 {
+            font-weight: 300;
+            color: $primary-color;
+            padding: 0;
+            margin: 0;
+        }
+        
+        svg {
+            width: 100%;
+            transition: all 0.5s;
+        }
+
+    }
+
+    &__svg {
+        width: 24px;
+    }
+
+    &__tab {
+        width: 25%;
+        
+        &.active {
+            &::after {
+                content: '';
+                background-color: white;
+                height: 10px;
+                height: 30px;
+                width: 100%;
+                display: block;
+                transition: all 0.5s;
+            }
+
+            svg {
+                transform: rotate(90deg);
+                transition: all 0.5s;
+            }
+        }
+        
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__tab-content {
+        background-color: white;
+        padding: 0 3rem;
+        
+        input, select {
+            @include border-radius(8px)
+        }
+    }
+
+    &__address {
+        background-color: white;
+        max-width: $max-width;
+        width: 90vw;
+        margin: 0 auto ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-sizing: border-box;
+        padding: 30px 0;
+        border-top: 1px solid $gray-200;
+    }
+
+    &__address-column {
+       h3 {
+        color: $primary-color;
+        font-weight: 500;
+       }
+
+       ul {
+        padding: 0;
+        margin: 0;
+
+            li {
+                list-style: none;
+                a {
+                    color: $primary-color;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+
+                a:not(.contato__address-map) {
+                    color: $gray-500;
+                    display: block;
+                    text-decoration: none;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                }
+            }
+       }
+    }
+}

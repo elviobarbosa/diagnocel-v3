@@ -13,6 +13,13 @@ textarea {
   }
 }
 
+input[type="submit"] {
+   background-color: $primary-color;
+   border: 0;
+   color: white;
+   padding: 10px 30px;
+
+}
 
 ::-webkit-input-placeholder { /* Edge */
    

@@ -18,7 +18,6 @@ $swiper_parms = [
     ],
 ];
 
-
 function postTerms($terms) {
     if ($terms && !is_wp_error($terms)) {
         

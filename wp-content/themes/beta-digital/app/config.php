@@ -65,6 +65,73 @@ add_filter(
     }
 );
 
+function custom_color_theme() {
+    
+    $oldColorPalette = current( (array) get_theme_support( 'editor-color-palette' ) );
+    if (false === $oldColorPalette && class_exists('WP_Theme_JSON_Resolver')) {
+        $settings = WP_Theme_JSON_Resolver::get_core_data()->get_settings();
+        if (isset($settings['color']['palette']['default'])) {
+            $oldColorPalette = $settings['color']['palette']['default'];
+        }
+    }
+
+    $newColorPalette = [
+        [
+            'name' => esc_attr__('Primary color', 'betaGutemberg'),
+            'slug' => 'primary-color',
+            'color' => '#2F3188',
+        ],
+        [
+            'name' => esc_attr__('Secondary color', 'betaGutemberg'),
+            'slug' => 'secondary-color',
+            'color' => '#D83731',
+        ],
+        [
+            'name' => esc_attr__('Light blue', 'betaGutemberg'),
+            'slug' => 'light-blue',
+            'color' => '#AEC0FA',
+        ],
+        [
+            'name' => esc_attr__('Green', 'betaGutemberg'),
+            'slug' => 'green',
+            'color' => '#4B8B89',
+        ],
+        [
+            'name' => esc_attr__('Citzen', 'betaGutemberg'),
+            'slug' => 'citzen',
+            'color' => '#EAEDF0',
+        ],
+        [
+            'name' => esc_attr__('Grey 500', 'betaGutemberg'),
+            'slug' => 'grey-500',
+            'color' => '#676767',
+        ],
+        [
+            'name' => esc_attr__('Grey 200', 'betaGutemberg'),
+            'slug' => 'grey-200',
+            'color' => '#A2A2A2',
+        ],
+        [
+            'name' => esc_attr__('Grey 100', 'betaGutemberg'),
+            'slug' => 'grey-100',
+            'color' => '#EFEFEF',
+        ],
+        [
+            'name' => esc_attr__('Light green', 'betaGutemberg'),
+            'slug' => 'light-green',
+            'color' => '#CADBDA',
+        ]
+    ];
+   
+    // Merge the old and new color palettes
+    if (!empty($oldColorPalette)) {
+        $newColorPalette = array_merge($oldColorPalette, $newColorPalette);
+    }
+    // Apply the color palette containing the original colors and 2 new colors:
+    add_theme_support( 'editor-color-palette', $newColorPalette);
+}
+add_action( 'after_setup_theme', 'custom_color_theme' );
+
 function custom_taxonomy_template( $template ) {
     $term = get_queried_object();
 
@@ -117,3 +184,15 @@ function add_submenu_prod_cat($items, $args) {
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'add_submenu_prod_cat', 10, 2);
+
+function remove_cpt_search($query) {
+
+    if (is_admin() || !$query->is_main_query() || !is_search())
+        return;
+
+    $remove_cpts = array('post_parceiros', 'post_menu_testes', 'post_selos', 'post_timeline'); 
+    if ($query->get('post_type') && in_array($query->get('post_type'), $remove_cpts)) {
+        $query->set('post_type', '');
+    }
+}
+add_action('pre_get_posts', 'remove_cpt_search');

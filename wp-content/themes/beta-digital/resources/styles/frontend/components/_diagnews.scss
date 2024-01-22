@@ -1,0 +1,43 @@
+.diagnews {
+    max-width: 1250px;
+    width: 90vw;
+    margin: 0 auto;
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    li {
+        .wp-block-post-featured-image {
+            @include image-proportional(370, 210);
+        }
+        img {
+            transition: all 0.3s;
+        }
+    }
+
+    .wp-block-post-excerpt__excerpt,
+    .wp-block-post-date,
+    hr {
+        display: none;
+    }
+
+    a {
+        color: $primary-color;
+        
+        &:hover {
+            img {
+                transform: scale(1.1);
+                transition: all 0.3s;
+            }
+        }
+    }
+
+    &__title {
+        max-width: 1250px;
+        width: 90vw;
+        margin: 0 auto;
+    }
+}

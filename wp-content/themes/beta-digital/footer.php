@@ -50,8 +50,6 @@ $categories = get_terms( array(
                         <a href="" alt="Ver localização no Google Maps">R. Duarte Coelho, 399 - F<br>
                         Paupina - Fortaleza-CE<a></p>
                     </div>
-
-
                 </div>
             </div>
 

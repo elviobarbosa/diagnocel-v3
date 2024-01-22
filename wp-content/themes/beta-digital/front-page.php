@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<main>
+<main <?php post_class('home') ?>>
 
    <?php
       the_content();

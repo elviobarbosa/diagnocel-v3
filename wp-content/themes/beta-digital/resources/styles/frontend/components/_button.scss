@@ -14,3 +14,18 @@
   }
 }
 
+.wp-block-button {
+  
+  &__link {
+    // background-color: $secondary-color;
+    @include border-radius(8px);
+    font-size: 16px;
+    background-image: url($imgpath + '/arrow-white.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) 50%;
+    padding-right: px-rem(80px);
+    margin: {
+      top: px-rem(10px);
+    };
+  }
+}

@@ -1,22 +1,46 @@
 .pagination {
-    .nav-links {
-        list-style-type: none;
-        width: 100%;
-        padding: 30px 20px;
-        text-align: center;
-    
-        .page-numbers {
-            display: inline-block;
-            padding: 0 10px;
-            color: $primary-color;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+}
+
+.screen-reader-text {
+    display: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    width: max-content;
+    margin: 0 auto;
+
+    a, span {
+        display: inline-block;
+        margin: {
+            left: 1rem;
+            right: 1rem;
+        };
+        text-decoration: none;
+    }
+
+    .page-numbers {
+       
+        @include border-radius(50px);
+        overflow: hidden;
+        width: 3rem;
+        height: 3rem;
+        color: $primary-color;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:not(:last-child) {
             
-            &:not(:last-child) {
-                
-            }
-    
-            &.current {
-               color: $gray-200;
-            }
+        }
+
+        &.current {
+           background-color: $grey-100;
+           color: white;
+           background-color: $secondary-color;
         }
     }
 }

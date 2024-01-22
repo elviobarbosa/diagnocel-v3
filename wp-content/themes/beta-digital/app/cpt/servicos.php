@@ -27,7 +27,7 @@ function posttype_servicos()
             'show_in_nav_menus' => true,
             'menu_position'     => 5,
             'has_archive'       => true,
-            'hierarchical'      => true,
+            'hierarchical'      => false,
             'rewrite'           => array('slug' => 'servicos'),
             'supports'          => array( 'title', 'thumbnail', 'editor'),
         )

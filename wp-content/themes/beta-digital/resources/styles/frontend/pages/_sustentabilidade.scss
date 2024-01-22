@@ -67,6 +67,32 @@
     }
 
     &__container {
+        margin: auto auto 60px;
+        max-width: 90vw;
+
+        img {
+            max-height: 700px;
+        }
+
+        h2 {
+            color: $green;
+            text-align: center;
+            @include fluid-size(font-size, 22px, 30px);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .wp-block-cb-slide {
+            margin-top: 30px;
+        }
+
         .c-card-selos {
             
             &:nth-child(odd) {

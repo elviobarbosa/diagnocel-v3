@@ -1,0 +1,25 @@
+%blog-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $primary-color;
+    @include fluid-size(font-size, 30px, 46px);
+    font-weight: 500;
+    line-height: 1.3em;
+}
+
+%blog-subtitle {
+    @include fluid-size(font-size, 16px, 24px);
+    color: $grey-500;
+}
+
+%blog-date {
+    color: $secondary-color;
+
+    @include max-lg {
+        font-size: 16px;
+    }
+
+    @include min-lg {
+        font-size: 18px;
+    }
+}

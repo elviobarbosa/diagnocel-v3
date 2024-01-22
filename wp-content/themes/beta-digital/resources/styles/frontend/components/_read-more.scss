@@ -1,0 +1,40 @@
+.read-more {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-top: 10rem;
+    width: 90vw;
+
+    &__body {
+        margin-bottom: 10rem;
+        @include min-lg {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+    }
+
+    &__date {
+        font-size: 16px;
+        color: $primary-color
+    }
+
+    &__title {
+        line-height: 1em;
+        a {
+            @include fluid-size(font-size, 22px, 40px);
+            line-height: 1.3em;
+            font-weight: 500;
+            color: $secondary-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__subtitle {
+        @include fluid-size(font-size, 16px, 20px);
+        color: $grey-100;
+    }
+}

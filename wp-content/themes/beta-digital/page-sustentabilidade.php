@@ -1,24 +1,30 @@
 <?php get_header(); ?>
 
 <main <?php post_class('sustentabilidade') ?>>
-    <?php the_content() ?>
+    <?php the_content();
+    $args = array(
+        'post_type' => 'post_acoes',
+        'posts_per_page' => -1,
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+    ?>
 
     <div class="sustentabilidade__container">
-        <?php 
-        if (function_exists('have_rows') && have_rows('selos')) {
-            while (have_rows('selos')) {
-                the_row();
-
-                get_template_part('template-parts/institucional/card-selos', null, [
-                    'title'     => get_sub_field('nome_selo'),
-                    'image'     => get_sub_field('imagem'),
-                    'descricao' => get_sub_field('descricao'),
-                    'ID'        => $post->ID
-                ]);
-            }
-        }
+        <?php   
+            the_title('<h2>', '</h2>');
+            the_content();
         ?>
     </div>
+    <?php
+     endwhile;
+     else :
+         echo 'Não foram encontrados posts.';
+
+     endif;?>
 </main>
 
 <?php get_footer(); ?>

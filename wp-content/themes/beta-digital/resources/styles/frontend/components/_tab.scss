@@ -15,11 +15,17 @@
     }
 }
 
+.tab-navigation {
+    display: flex;
+}
+
 /* Style the tab content */
 .tabcontent {
-    display: none;
-
+    //display: none;
+    &.hide {
+        display: none
+    }
     &.active {
-        display: block;
+        display: block!important;
     }
 }

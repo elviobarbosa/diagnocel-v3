@@ -1,0 +1,22 @@
+.wp-block-cb-carousel .wp-block-image>img {
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+.slick-dots li.slick-active button:before {
+    color: $secondary-color;
+}
+
+.slick-dots li button:before {
+    font-size: 14px;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.wp-block-cb-carousel .slick-next:before, .wp-block-cb-carousel .slick-prev:before {
+    color: $primary-color;
+    font-size: 30px;
+}

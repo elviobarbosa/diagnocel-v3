@@ -13,26 +13,37 @@ export default class Tabs {
     }
 
     start(elements) {
+        let alturaMaxima = 0;
+        setTimeout( () => {
+            const tabcontent = document.querySelectorAll('.tabcontent');
+            let before = 0;
+            
+            tabcontent.forEach(tab => {
+                alturaMaxima = Math.max(tab.offsetHeight, before);
+                before = tab.offsetHeight;
+            });
+
+            tabcontent.forEach(elemento => {
+                elemento.style.height = `${alturaMaxima}px`;
+                elemento.classList.add('hide')
+            });
+        }, 100)
+        
         elements.forEach(el => {
             const tabs = el.querySelectorAll('.tablinks');
             const showTab = (ev) => {
                 const { tab } = ev.currentTarget.dataset;
                 let i, tabcontent, tablinks;
-                console.log(document.querySelectorAll('.tabcontent'))
                 tabcontent = document.querySelectorAll('.tabcontent');
-                console.log(tabcontent, tabcontent.length)
                 for (i = 0; i < tabcontent.length; i++) {
-                    console.log(i, 'nom');
                     tabcontent[i].style.display = 'none';
                 }
             
-                // Get all elements with class="tablinks" and remove the class "active"
                 tablinks = el.getElementsByClassName('tablinks');
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].className = tablinks[i].className.replace(' active', '');
                 }
             
-                // Show the current tab, and add an "active" class to the button that opened the tab
                 document.getElementById(tab).style.display = "block";
                 ev.currentTarget.className += " active";
             }

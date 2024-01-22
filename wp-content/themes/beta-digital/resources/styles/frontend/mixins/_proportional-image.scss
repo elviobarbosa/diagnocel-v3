@@ -11,8 +11,11 @@
   padding-bottom: proportion($w-proportional, $h-proportional);
   position: relative;
 
-  figure {
-    height: 100%;
+  .proportional__wrapper,
+  figure,
+  a {
+    display: block;
+    height: 100%!important;
     left: 0;
     position: absolute;
     top: 0;

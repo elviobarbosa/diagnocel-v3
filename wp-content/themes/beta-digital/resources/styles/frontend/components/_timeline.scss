@@ -42,12 +42,12 @@
         display: inline-block;
         font-size: 35px;
         font-weight: 300;
-        color: $gray-500;
+        color: $grey-500;
         position: absolute;
 
         &::after {
             content: '';
-            background-color: $gray-500;
+            background-color: $grey-500;
             width: 2px;
             height: 30px;
             display: block;

@@ -1,14 +1,114 @@
-.single-blog {
+.single-post {
 
-    &__date {}
+    &__main {
+        max-width: 980px;
 
-    &__image {}
+        @include min-lg {
+            width: 90vw;
+            margin: 0 auto;
+        }
+    }
 
-    &__excerpt {}
+    &__content {
+        color: $primary-color;
 
-    &__share {}
+        @include max-lg {
+            font-size: 16px;
+        }
 
-    &__category {}
+        @include min-lg {
+            font-size: 24px;
+        }
+        
+    }
 
-    &__shared {}
+    &__date {
+        @extend %blog-date;
+    }
+
+    img {
+        @include border-radius(20px);
+        max-width: 100%;
+    }
+
+    figcaption {
+        font-size: 14px;
+        color: grey;
+    }
+
+    &__subtitle {
+        @extend %blog-subtitle;
+    }
+
+    &__title-blog {
+       @extend %blog-title;
+    }
+
+    &__category {
+        text-align: center;
+        margin-top: 4rem;
+
+        ul {
+            padding-left: 0;
+        }
+        
+        @include max-lg {
+
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+
+            &:last-child {
+                span {
+                    display: none
+                }
+            }
+        }
+
+        span {
+            display: inline-block;
+            margin-left: 2rem;
+        }
+        a, span {
+            color: $primary-color;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            @include max-lg {
+                font-size: 12px;
+            }
+
+            @include min-lg {
+                font-size: 18px;
+            }
+            
+        }
+
+    }
+
+    &__features {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #cadbda;
+        border-bottom: 1px solid #cadbda;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    &__shared {
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            list-style: none;
+            margin-right: 1rem;
+            width: px-rem(30px);
+        }
+    }
 }

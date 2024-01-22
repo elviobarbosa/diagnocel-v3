@@ -7,3 +7,6 @@ require_once($scan_dir . 'menu-testes.php');
 require_once($scan_dir . 'marcas.php');
 require_once($scan_dir . 'servicos.php');
 require_once($scan_dir . 'timeline.php');
+require_once($scan_dir . 'selos.php');
+require_once($scan_dir . 'acoes.php');
+require_once($scan_dir . 'solucoes-inteligentes.php');

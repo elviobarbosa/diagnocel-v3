@@ -2,18 +2,21 @@ $primary-color: #2F3188;
 $secondary-color: #D83731;
 $light-blue: #AEC0FA;
 $green: #4B8B89;
+$light-green: #CADBDA;
 $citzen: #EAEDF0;
-$gray-500: #676767; 
-$gray-200: #A2A2A2;
-$gray-100: #EFEFEF;
+$grey-500: #676767; 
+$grey-200: #A2A2A2;
+$grey-100: #EFEFEF;
 $light-color: #ffffff;
 
 $theme-colors: (
   "primary-color": $primary-color,
-  "secundary-color": $secondary-color,
-  "gray-500": $gray-500,
-  "gray-200": $gray-200,
-  "gray-100": $gray-100,
+  "secondary-color": $secondary-color,
+  "light-blue": $light-blue,
+  "light-green": $light-green,
+  "grey-500": $grey-500,
+  "grey-200": $grey-200,
+  "grey-100": $grey-100,
   "green": $green,
   "light-color": $light-color
 );

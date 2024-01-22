@@ -9,7 +9,7 @@
     h2 {
         @include fluid-size(font-size, 24px, 30px);
         font-weight: 300;
-        color: $gray-500;
+        color: $grey-500;
 
         @include min-xl {
             padding-left: px-rem(60px);
@@ -26,11 +26,11 @@
     &__left {
         @include max-xl {
             padding: px-rem(20px) 0;
-            border-bottom: 1px solid $gray-100;   
+            border-bottom: 1px solid $grey-100;   
         }
 
         @include min-xl {
-            border-right: 1px solid $gray-100;
+            border-right: 1px solid $grey-100;
             padding-top: px-rem(40px);
         }
     }
@@ -41,7 +41,7 @@
         }
 
         @include min-xl {
-            border-bottom: 1px solid $gray-100;
+            border-bottom: 1px solid $grey-100;
             padding-left: px-rem(60px);
             padding-bottom: px-rem(40px);
             column-count: 3;
@@ -67,7 +67,7 @@
     &__selos {
         @include max-xl {
             padding: px-rem(20px) 0;
-            border-bottom: 1px solid $gray-100;
+            border-bottom: 1px solid $grey-100;
             column-count: 3;
             column-gap: 40px;
             -moz-column-count: 3;
@@ -106,7 +106,7 @@
         }
 
         a {
-            color: $gray-500;
+            color: $grey-500;
             text-decoration: none;
             font-size: 16px;
             line-height: 1.5em;

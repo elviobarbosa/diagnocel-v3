@@ -15,6 +15,8 @@
         }
         
         .wp-block-media-text__content {
+            max-width: 500px;
+            margin: 0 auto;
             h1 {
                 @include fluid-size(font-size, 30px, 45px);
                 font-weight: 300;
@@ -173,7 +175,7 @@
 
     p, li {
         font-size: px-rem(18px);
-        color: $gray-500;
+        color: $grey-500;
         line-height: 1.8rem;
         font-weight: 300;
 

@@ -76,14 +76,15 @@
 }
 
 
-
-
-
 @mixin colors($colors) {
 
   @each $name,
   $color in $colors {
     .#{$name} {
+      color: $color;
+    }
+
+    .has-#{$name}-color {
       color: $color;
     }
   }
@@ -104,6 +105,9 @@
   @each $name,
   $color in $colors {
     .bg-#{$name} {
+      background-color: $color;
+    }
+    .has-#{$name}-background-color {
       background-color: $color;
     }
   }

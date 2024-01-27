@@ -2,14 +2,32 @@
     max-width: 1366px;
     width: 95vw;
     margin: 0 auto;
+
+    &__category-cover {
+        @extend %bg_header;
+        margin-bottom: px-rem(50px);
+        position: relative;
+        background-color: white;
+        
+        &::after {
+            content: '';
+            background-color: $primary-color;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            mix-blend-mode: multiply;
+            
+        }
+    }
     
-   
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         gap: 20px;
         padding-bottom: px-rem(60px);
-        width: 70vw;
+
     }
     
     &__category-head {
@@ -20,8 +38,25 @@
 
     &__category-name {
         @include fluid-size(font-size, 30px, 45px);
-        color: $primary-color;
         font-weight: 300;
+        max-width: $max-width;
+        margin: auto;
+        color: white;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__category-description {
+        font-weight: 300;
+        max-width: $max-width;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+
+        p {
+            color: $light-blue;
+            max-width: 800px;
+        }
     }
 
     &__subcategory-name {
@@ -61,7 +96,8 @@
     
     &__container {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 70% auto;
+        grid-gap: 30px;
     }
 
     &__sidebar {
@@ -72,17 +108,25 @@
 
        li {
         list-style: none;
-        color: $primary-color;
+        color: white;
         text-transform: uppercase;
         cursor: pointer;
         padding-bottom: .3rem;
         padding-top: .3rem;
-        padding-left: .3rem;
+        padding-left: 1rem;
         @include border-radius(6px);
         transition: all 0.5s;
+        background-color: $primary-color;
+        margin-bottom: 5px;
+        font-size: 14px;
+        cursor: pointer;
+
+        &.active {
+            background-color: $secondary-color;
+        }
 
         &:hover {
-            background-color: $primary-color;
+            background-color: $secondary-color;
             transition: all 0.5s;
             color: white;
         }

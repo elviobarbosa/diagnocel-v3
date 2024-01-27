@@ -1,6 +1,9 @@
 .home {
-    .institucional {
+    h2 {
+        @include fluid-size(font-size, 30px, 45px);
+    }
     
+    .institucional {
         &__cover {
             background-color: $primary-color;
 

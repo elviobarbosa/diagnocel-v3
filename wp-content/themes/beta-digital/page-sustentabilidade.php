@@ -12,7 +12,7 @@
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
     ?>
-
+    
     <div class="sustentabilidade__container">
         <?php   
             the_title('<h2>', '</h2>');

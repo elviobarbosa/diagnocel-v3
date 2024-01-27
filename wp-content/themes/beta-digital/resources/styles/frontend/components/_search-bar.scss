@@ -8,6 +8,7 @@
     input {
         border: none;
         background-color: transparent;
+        font-size: 12px;
     }
 
     #search-input {
@@ -20,5 +21,36 @@
         background-size: 15px;
         background-position: 90% 50%;
         width: 20px;
+        cursor: pointer;
+    }
+}
+
+#closesearch {
+    display: none;
+    background-image: url($imgpath + '/close.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 90% 50%;
+    width: 30px;
+    cursor: pointer;
+}
+
+.search-active {
+    #closesearch {
+        display: inline-block;
+    }
+    li.search-menu-item {
+        position: absolute!important;
+        width: calc(100% + 40px);
+        transition: all .3s ease-out;
+
+        a {
+            width: 100%;
+            transition: all .3s ease-out;
+        }
+    }
+
+    .search-bar {
+        max-width: inherit;
     }
 }

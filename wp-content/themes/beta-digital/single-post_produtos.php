@@ -22,7 +22,7 @@ function postTerms($terms) {
     if ($terms && !is_wp_error($terms)) {
         
         foreach ($terms as $term) {
-            echo '<span>' . esc_html($term->name) . ' / </span>';
+            echo '<span>' . esc_html($term->name) . ' </span>';
         }
     }
 }
@@ -50,7 +50,7 @@ while ( have_posts() ) : the_post();
                         <div class="single-products__category">
                         <?php
                         postTerms($termsSize);
-                        postTerms($termsProd);
+                        
                     ?>
                         </div>
                     </div>
@@ -155,7 +155,8 @@ while ( have_posts() ) : the_post();
         </article>
 
         <div class="form-contato" id="fale-conosco">
-            <h2 class="form-contato__title">Fale conosco</h2>
+            <h2 class="form-contato__title">Tem interesse?</h2>
+            <p>Envie seus dados abaixo, entraremos em contato o mais breve possível.</p>
             <?php echo do_shortcode('[contact-form-7 id="40f695f" title="Contato"]') ?>
         </div>
         

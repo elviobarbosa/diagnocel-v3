@@ -21,7 +21,7 @@ $items = Array(
 ?>
 
 <main <?php post_class('contato') ?>>
-    <h1 class="page-title contato__title">Fale conosco</h1>
+    <h1 class="page-title contato__title">Fale com a gente</h1>
     
     <div class="contato__tabs-container">
         <div data-js="tabs" class="contato__tabs">

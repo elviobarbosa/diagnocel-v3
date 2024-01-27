@@ -1,9 +1,4 @@
-.single-post_solucoes {
-main {
-    padding-top: px-rem(40px)
-}
- 
-}
+
 .archive-solucoes {
     &__title {
         @include fluid-size(font-size, 24px, 60px);
@@ -16,6 +11,10 @@ main {
         &:hover {
             color: white;
         }
+    }
+
+    &__title--white {
+        color: white;
     }
 
     a {
@@ -33,6 +32,9 @@ main {
         padding: px-rem(50px) 0;
         position: relative;
         overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     
         &::before {
             content: '';
@@ -43,7 +45,8 @@ main {
             top: 0;
             left: 0;
             top: 50%;
-            transform: translateY(-50%)
+            transform: translateY(-50%);
+            mix-blend-mode: multiply;
         }
     
         &:hover {

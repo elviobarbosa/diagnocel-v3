@@ -119,15 +119,11 @@
     }
 
     &__image {
-        background-color: white;
-       
+        background-color: #c9d0d5;
         width: 100%;
         position: relative;
         max-width: 640px;
         overflow: hidden;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
         max-height: px-rem(500px);
         box-sizing: border-box;
 

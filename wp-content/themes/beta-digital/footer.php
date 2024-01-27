@@ -27,9 +27,11 @@ $categories = get_terms( array(
                     </ul>
 
                     <ul class="footer__selos">
-                        <li><img src="<?php echo IMGPATH ?>selo-plante-arvore.png" alt="Plante uma árvore"></li>
-                        <li><img src="<?php echo IMGPATH ?>selo-chico-mendes.png" alt="Instituto Chico Mendes"></li>    
+                        <li><img src="<?php echo IMGPATH ?>iso.png" alt="ISO"></li>
                         <li><img src="<?php echo IMGPATH ?>selo-anvisa.png" alt="Anvisa"></li>
+                        <li><img src="<?php echo IMGPATH ?>selo-chico-mendes.png" alt="Instituto Chico Mendes"></li>  
+                        <li><img src="<?php echo IMGPATH ?>selo-plante-arvore.png" alt="Plante uma árvore"></li>
+                        <li><img src="<?php echo IMGPATH ?>selo-pacto-global.png" alt="Pacto Global ONU"></li>
                     </ul>
 
                 </div>
@@ -40,7 +42,7 @@ $categories = get_terms( array(
                         <p>
                         <a href="tel:+558534623600" alt="Ligar">(85) 3462-3600</a><br>
                         <a href="" alt="Ver localização no Google Maps">R. Duarte Coelho, 399 - F<br>
-                        Paupina - Fortaleza-CE<a></p>
+                        Paupina - Fortaleza-CE</a></p>
                     </div>
 
                     <div class="footer__biocore">
@@ -48,11 +50,16 @@ $categories = get_terms( array(
                         <p>
                         <a href="tel:+558534623600" alt="Ligar">(85) 3462-3600</a><br>
                         <a href="" alt="Ver localização no Google Maps">R. Duarte Coelho, 399 - F<br>
-                        Paupina - Fortaleza-CE<a></p>
+                        Paupina - Fortaleza-CE</a></p>
                     </div>
                 </div>
             </div>
 
+            <ul class="footer__termos">
+                <li><a href="<?php echo site_url('/codigo-de-conduta-e-etica-diagnocel')?>">Código de conduta e ética - Diagnocel</a></li>
+                <li><a href="<?php echo site_url('/codigo-de-conduta-e-etica-biocore')?>">Código de conduta e ética - Biocore</a></li>
+                <li><a href="<?php echo site_url('/responsabilidade-socioambiental')?>">Responsabilidade socioambiental</a></li>
+            </ul>
         </footer>
 
     </body>

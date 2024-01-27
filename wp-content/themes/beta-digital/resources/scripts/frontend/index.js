@@ -8,6 +8,7 @@ import InputMasks from './components/input-masks';
 import ScrollTo from './components/scroll-to';
 import SidebarProducts from './components/sidebar-products';
 import Tabs from './components/tabs';
+import Search from './components/search';
 
 
 function domReady(fn) {
@@ -21,7 +22,8 @@ function domReady(fn) {
       new InputMasks();
       new ScrollTo();
       new SidebarProducts();
-      new Tabs()
+      new Tabs();
+      new Search();
     }
 }
 

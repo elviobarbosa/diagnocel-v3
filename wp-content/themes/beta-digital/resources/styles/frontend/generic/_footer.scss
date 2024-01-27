@@ -64,6 +64,21 @@
         }
     }
 
+    &__termos {
+        display: flex;
+        background-color: $primary-color;
+        justify-content: center;
+        padding: 10px;
+        li {
+            padding: 0 10px;
+            a {
+                font-size: 12px;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
     &__selos {
         @include max-xl {
             padding: px-rem(20px) 0;

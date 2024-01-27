@@ -5,12 +5,13 @@ $subtitle = is_singular(array('post_produtos')) ? get_the_title() : "";
 function byCat($post, $title, $subtitle) {
     $orig_post = $post;
     global $post;
-    $categories = get_the_terms( $post->ID, 'prod-type_category' );
+    $categories = get_the_terms( $post->ID, 'prod_category' );
     
     if ($categories) 
     {
         $category_ids = array();
         foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+        
         $args = array(
             'post_type' => 'post_produtos',
             'category__in' => $category_ids,
@@ -18,13 +19,26 @@ function byCat($post, $title, $subtitle) {
             'posts_per_page'=> 4,
             'ignore_sticky_posts'=>1
         );
+        
+        $args = array(
+            'post_type' => 'post_produtos',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'prod_category',
+                    'field'    => 'id',
+                    'terms'    => $category_ids,
+                ),
+            ),
+            'post__not_in'         => array( $post->ID ),
+            'posts_per_page'       => 3,
+            'ignore_sticky_posts'  => 1,
+        );
 
         $myposts = get_posts( $args );
-
         if ( !$myposts ) {
             $args = array(
                 'post_type' => 'post_produtos',
-                'posts_per_page'=> 4,
+                'posts_per_page'=> 3,
                 'post__not_in' => array($post->ID),
                 'ignore_sticky_posts'=>1
             );

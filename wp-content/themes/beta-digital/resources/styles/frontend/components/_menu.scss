@@ -71,6 +71,13 @@
 				}
 			}
 		}
+
+		.menu-line {
+			ul.sub-menu {
+				grid-template-columns: 1fr!important;
+    			width: inherit!important;
+			}
+		}
 		
 
 		ul {

@@ -18,7 +18,7 @@ body{
 	padding: 0!important;
 }
 
-p, a, ul, li {
+p, a, ul, li, cite {
 	font-size: px-rem(18px);
 	color: $grey-500;
 	line-height: 1.6em;
@@ -72,7 +72,8 @@ h5 {
 
 .page-title {
 	color: $primary-color;
-	font-weight: 300;	
+	font-weight: 300;
+	@include fluid-size (font-size, 30px, 60px);
 }
 
 figure {

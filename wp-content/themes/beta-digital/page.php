@@ -1,49 +1,38 @@
 <?php
-
-
 get_header();
+
+if ( has_post_thumbnail() ) {
+    $thumbnail_url = get_the_post_thumbnail_url();
+    $bg = 'style="background-image: url(' . esc_url( $thumbnail_url ) . ')"';
+}
 ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="single-post__main">
-        <div class="container">
-            <div class="single-post__category">
-                <ul>
-                <?php
-                $post_categories = wp_get_post_categories( get_the_ID() );
-                ?>
-                </ul>
-            </div>
-            
-            <div class="single-post__container">
-                <article>
-                    <div class="single-post__header">
-                        <h1 class="single-post__title-blog"><?php the_title() ?></h1>
-                    </div>
+<main <?php post_class('single-solucoes ' . $desktop) ?>>
+    <div class="single-solucoes__header" <?php echo $bg ?>>
+        <h1 class="single-solucoes__title-blog"><?php the_title() ?></h1>
+    </div>
 
-                   
-
-                    <div class="single-post__body">
-                        <div class="single-post__content">
-                            <?php the_content() ?>
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-
-        <div class="single-post__share">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="single-solucoes__main">
             <div class="container">
-                <div class="single-post__container">
-
-                    
+                
+                <div class="single-solucoes__container">
+                    <article>
+                        <div class="single-solucoes__body">
+                            <div class="single-solucoes__content">
+                                <?php the_content() ?>
+                            </div>
+                        </div>
                 </div>
             </div>
+
         </div>
-    </div>
-    <?php endwhile; endif;
-    get_template_part( 'template-parts/blog/more-news', null, array('remove' => get_the_ID()) );
-    
-    get_footer();
-    ?>
+
+        <?php endwhile; endif;
+        get_template_part( 'template-parts/blog/more-news', null, array('remove' => get_the_ID()) );
+        ?>
+    </main>
+        <?php
+        get_footer();
+        ?>
 
 <?php get_footer(); ?>

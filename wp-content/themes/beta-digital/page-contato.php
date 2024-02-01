@@ -28,7 +28,7 @@ $items = Array(
             <?php 
             for ($i = 0; $i < count($items); $i+=1) : ?>
                 <div data-tab="contato-<?php echo $i?>" class="contato__tab tablinks">
-                    <div  class=" contato__tablink">
+                    <div class="contato__tablink">
                         <div>
                             <img src="<?php echo IMGPATH ?><?php echo $items[$i]["ico"]?>.png" alt="Faça uma denúncia">
                         </div>
@@ -62,7 +62,7 @@ $items = Array(
                     ?>
                 </div>
                 <div id="contato-2" data-tab="contato-3" class="tabcontent">
-                    <?php echo do_shortcode('[contact-form-7 id="2eab9f0" title="Elogio"]') ?>
+                    <?php echo do_shortcode('[contact-form-7 id="6f674b9" title="Elogio"]') ?>
                     <?php 
                     get_template_part('template-parts/contato/endereco', null);
                     ?>

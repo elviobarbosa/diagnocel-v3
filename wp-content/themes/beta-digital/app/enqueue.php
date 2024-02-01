@@ -25,6 +25,8 @@ function wpdocs_theme_name_scripts() {
     
     //scripts
     wp_enqueue_script( 'jquery' );
+   // wp_enqueue_script('swiper-js', get_template_directory_uri() . '/resources/scripts/frontend/utils/swiper.js', array(), '', true);
+
     //wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array(), '', true);
  }
  

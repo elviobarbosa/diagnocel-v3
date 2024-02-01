@@ -1,14 +1,21 @@
 <?php
-function timeline() {
+function timeline($atts) {
+    $empresa = $atts['empresa'];
     $argsQuery = array(
         'post_type'         => 'post_timeline',
         'post_status'       => 'publish',
-        'posts_per_page'    => -1
+        'posts_per_page'    => -1,
+        'meta_query'     => array(
+            array(
+                'key'   => 'empresa', 
+                'value' => $empresa,
+            ),
+        ),
     );
     $post_list = get_posts($argsQuery);
     $data = [
         'slidesPerView' => 'auto',
-        'spaceBetween'  => '30px',
+        'spaceBetween'  => 30,
         'pagination' => [
             'el' => '.swiper-pagination',
             'clickable' => true
@@ -29,19 +36,6 @@ function timeline() {
     
     $result .= '</div><div class="swiper-pagination"></div></div>';
 
-    // for ($i = 1; $i < 5; $i++) {
-    //     $opacity -= 0.15;
-    //     $position -= 10;
-    //     $decorator .= '<div class="partners-slide__decorator" style="opacity:' .$opacity. '; transform: translate('.abs($position).'px, '.$position.'px) skewY(10deg)"></div>';
-    // }
-    // $result = '<div class="partners-slide">';
-    // $result .= '<div class="partners-slide__container" data-js="slick" data-slick=\''. wp_json_encode( $slickdata )  .'\'>';
-    // foreach ( $post_list as $post ) :
-    //     $result .= '<div class="partners-slide__item">'.get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'alignleft' ) ).'</div>';
-    // endforeach;
-    // $result .= '</div>';
-    // $result .= $decorator;
-    // $result .= '</div>';
     return $result;
 }
 add_shortcode('timeline', 'timeline');

@@ -7,6 +7,17 @@
             width: 90vw;
             margin: 0 auto;
         }
+
+        img {
+            @include border-radius(20px);
+            max-width: 100%;
+        }
+    }
+
+    &__header {
+        @include max-lg {
+            padding: 0 30px;
+        }
     }
 
     &__content {
@@ -26,10 +37,7 @@
         @extend %blog-date;
     }
 
-    img {
-        @include border-radius(20px);
-        max-width: 100%;
-    }
+   
 
     figcaption {
         font-size: 14px;
@@ -85,7 +93,12 @@
             }
             
         }
+    }
 
+    &__body {
+        @include max-lg {
+            padding: 0 30px;
+        }
     }
 
     &__features {
@@ -96,6 +109,10 @@
         border-bottom: 1px solid #cadbda;
         margin-top: 30px;
         margin-bottom: 30px;
+
+        @include max-lg {
+            padding: 0 30px;
+        }
     }
 
     &__shared {

@@ -1,9 +1,16 @@
 .form__group {
-    display: flex;
-    column-gap: 20px;
-    > div {
-        width: 50%;
+
+    @include min-lg {
+        display: flex;
         column-gap: 20px;
+    }
+    
+    > div {
+
+        @include min-lg {
+            width: 50%;
+            column-gap: 20px;
+        }
     }
 }
 

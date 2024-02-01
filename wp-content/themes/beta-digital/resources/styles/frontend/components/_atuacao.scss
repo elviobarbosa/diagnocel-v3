@@ -2,14 +2,16 @@
     position: relative;
 
     &::after {
-        content: '';
-        
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        left: 50%;
-        top: 0;
-        z-index: 0;
+        @include min-lg {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            z-index: 0;
+        }
+      
     }
 
     &__header {
@@ -23,17 +25,30 @@
 
     &__areas {
         max-width: $max-width;
-        width: 89vw;
         margin: px-rem(50px) auto 10px;
         position: relative;
         z-index: 1;
         align-items: center!important;
+
+        .wp-block-column:first-child {
+            @include max-lg {
+                padding: 0 px-rem(30px);
+            }
+        }
+
+        @include min-lg {
+            width: 89vw;
+        }
     }
 
     &__mapa {
         text-align: center;
         padding: 15px 0;
+
         img {
+            @include max-lg {
+                width: 100%;
+            }
             max-width: 500px;
         }
     }

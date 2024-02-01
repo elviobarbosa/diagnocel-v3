@@ -9,6 +9,7 @@ import ScrollTo from './components/scroll-to';
 import SidebarProducts from './components/sidebar-products';
 import Tabs from './components/tabs';
 import Search from './components/search';
+import ScrollingAnimation from './components/scrolling-animation';
 
 
 function domReady(fn) {
@@ -24,6 +25,7 @@ function domReady(fn) {
       new SidebarProducts();
       new Tabs();
       new Search();
+      new ScrollingAnimation();
     }
 }
 

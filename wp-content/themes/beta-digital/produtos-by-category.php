@@ -30,8 +30,8 @@ if ($term_list && !is_wp_error($term_list)) {
 
 ?>
 <div class="archive-products__category-cover" <?php echo $bg ?>>
-    <h1 class="archive-products__category-name"><?php echo $cat_name ?></h1>
-    <div class="archive-products__category-description"><p><?php echo $description ?></p></div>
+    <h1 class="archive-products__category-name js-scroll slide-from-right"><?php echo $cat_name ?></h1>
+    <div class="archive-products__category-description js-scroll slide-from-right"><p><?php echo $description ?></p></div>
 </div>
 
 <main <?php post_class('archive-products ' . $desktop) ?>>

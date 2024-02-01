@@ -2,6 +2,7 @@
     .tabcontent {
         display: none;
     }
+
     &__tabs-container {
         max-width: $max-width;
         width: 90vw;
@@ -9,8 +10,16 @@
     }
 
     &__tabs {
-        display: flex;
-        column-gap: 20px;
+        @include min-lg {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        @include max-lg {
+            display: grid;
+            grid-template-columns: auto 50%;
+            gap: 20px;
+        }
     }
 
     &__title {
@@ -30,6 +39,7 @@
         cursor: pointer;
 
         h3 {
+            @include fluid-size(font-size, 18px, 30px);
             font-weight: 300;
             color: $primary-color;
             padding: 0;
@@ -40,7 +50,6 @@
             width: 100%;
             transition: all 0.5s;
         }
-
     }
 
     &__svg {
@@ -48,19 +57,34 @@
     }
 
     &__tab {
-        width: 25%;
         
+        @include min-lg {
+            width: 25%;
+        }
+
         &.active {
             &::after {
-                content: '';
-                background-color: white;
-                height: 10px;
-                height: 30px;
-                width: 100%;
-                display: block;
-                transition: all 0.5s;
+                @include min-lg {
+                    background-color: white;
+                    content: '';
+                    height: 10px;
+                    height: 30px;
+                    width: 100%;
+                    display: block;
+                    transition: all 0.5s;
+                }
             }
 
+            .contato__tablink {
+                @include min-lg {
+                    background-color: white;
+                }
+
+                @include max-lg {
+                    background-color: $light-blue;
+                }
+            }
+            
             svg {
                 transform: rotate(90deg);
                 transition: all 0.5s;
@@ -82,9 +106,17 @@
         input, select {
             @include border-radius(8px)
         }
+
+        @include max-lg {
+            margin-top: 30px;
+        }
     }
 
     &__address {
+        @include max-lg {
+            display: none;
+        }
+        
         background-color: white;
         max-width: $max-width;
         width: 90vw;

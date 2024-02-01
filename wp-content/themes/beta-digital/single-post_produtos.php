@@ -69,7 +69,6 @@ while ( have_posts() ) : the_post();
                 </div>
                 <div class="single-products__cover-right">
                     <div class="single-products__image">
-                       
 
                         <div class="swiper" data-params=<?php echo wp_json_encode($swiper_parms) ?>>
                             
@@ -112,8 +111,8 @@ while ( have_posts() ) : the_post();
             </div>
 
             <div class="single-products__content">
-                <div class="bg-square"></div>
-                <div class="single-products__container">
+                <div class="bg-square js-scroll slide-from-left"></div>
+                <div class="single-products__container js-scroll to-up">
                     <?php the_content() ?>
                 </div>
             </div>

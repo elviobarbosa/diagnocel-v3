@@ -1,9 +1,18 @@
 .nav-container {
 	background-color: white;
 	box-sizing: border-box;
-	padding: 1rem 2rem;
+	
 	width: 100%;
 	z-index: 100;
+	position: relative;
+
+	@include min-lg {
+		padding: px-rem(10px) px-rem(20px);
+	}
+
+	@include max-lg {
+		padding: px-rem(10px) px-rem(10px);
+	}
 
 	&.fixed {
 		left: 0;
@@ -59,9 +68,17 @@
 		#menu-header-menu > .menu-item-has-children {
 			background-image: url($imgpath + '/seta-submenu.png');
 			background-repeat: no-repeat;
-			background-position: 100% 50%;
+			
 			padding-right: 20px;
 			background-size: 10px;
+
+			@include min-xl {
+				background-position: 100% 50%;
+			}
+
+			@include max-xl {
+				background-position: 100% 13px;
+			}
 
 			&:hover {
 				background-color: white;
@@ -78,37 +95,53 @@
     			width: inherit!important;
 			}
 		}
-		
 
 		ul {
+			@include max-xl {
+				padding: 0 px-rem(30px);
+				margin: 0;
+			}
+
 			@include min-xl {
 				display: flex;
+				align-items: center;
 				padding: 0;
 				margin: 0;
-				align-items: center;
+			}
 
-				.sub-menu {
+			.sub-menu {
+				width: 100vw;
+				overflow-y: auto;
+				padding: 8px;
+				min-width: 200px;
+				display: none;
+
+				@include min-xl {
 					grid-template-columns: 1fr 1fr;
-					width: 450px;
+					max-width: 600px;
 					position: absolute;
-					max-height: 355px;
-					overflow-y: auto;
+					max-height: 375px;
 					top: 18px;
 					left: 0;
 					background-color: $primary-color;
-					padding: 8px;
-					min-width: 200px;
-					display: none;
+				}
 
-					li {
+				li {
+					
+					list-style: none;
+
+					@include min-xl {
 						padding: 5px 0;
-						a {
+					}
+					a {
+						@include min-xl {
 							color: white;
-							font-size: px-rem(14px);
+						}
+						
+						font-size: px-rem(14px);
 
-							&:hover {
-								color: white;
-							}
+						&:hover {
+							color: white;
 						}
 					}
 				}
@@ -142,8 +175,9 @@
 			
 
 			li {
+				list-style: none;
 				@include min-xl {
-					list-style: none;
+					
 					font-size: px-rem(14px);
 					font-weight: 700;
 					position: relative;
@@ -169,6 +203,13 @@
 
 	&__logo {
 		z-index: 100;
+
+		img {
+			@include max-lg {
+				max-width: 170px;
+			}
+		}
+		
 	}
 
 	&__menu.active {
@@ -185,14 +226,14 @@
 	}
 
 	.h-menu {
-		width: 3rem;
+		width: 2rem;
 	
 		&__line {
 			display: block;
 			width: 100%;
-			height: 0.4rem;
+			height: 0.3rem;
 			background-color: $grey-500;
-			margin-bottom: 0.4rem;
+			margin-bottom: 0.2rem;
 			transition: all .3s ease-out;
 			@include border-radius(1.2rem);
 	
@@ -207,7 +248,7 @@
 			}
 			&:last-child {
 				transform: rotate(-45deg);
-				margin-top: -0.8rem;
+				margin-top: -0.5rem;
 				transition: all .3s ease-in-out;
 			}
 			&:nth-child(2) {
@@ -222,4 +263,14 @@
     background-color: #ededed;
     padding: 5px;
     border-radius: 8px;
+
+	@include max-xl {
+		margin-top: 30px;
+	}
+
+	a {
+        @include max-xl {
+            width: 100%;
+        }
+    }
 }

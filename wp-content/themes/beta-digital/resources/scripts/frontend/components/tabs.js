@@ -24,8 +24,10 @@ export default class Tabs {
             });
 
             tabcontent.forEach(elemento => {
+                if (alturaMaxima > 0) {
                 elemento.style.height = `${alturaMaxima}px`;
                 elemento.classList.add('hide')
+                }
             });
         }, 100)
         

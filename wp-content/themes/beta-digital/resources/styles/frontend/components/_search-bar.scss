@@ -1,9 +1,11 @@
 .search-bar {
-    
     padding: 0;
     margin: 0;
     display: flex;
-    max-width: 120px;
+
+    @include min-xl {
+        max-width: 120px;
+    }
 
     input {
         border: none;
@@ -37,12 +39,17 @@
 
 .search-active {
     #closesearch {
-        display: inline-block;
+        @include min-xl {
+            display: inline-block;
+        }
     }
+
     li.search-menu-item {
-        position: absolute!important;
-        width: calc(100% + 40px);
-        transition: all .3s ease-out;
+        @include min-xl {
+            position: absolute!important;
+            width: calc(100% + 40px);
+            transition: all .3s ease-out;
+        }
 
         a {
             width: 100%;
@@ -51,6 +58,9 @@
     }
 
     .search-bar {
-        max-width: inherit;
+        @include min-xl {
+            max-width: inherit;
+        }
+       
     }
 }

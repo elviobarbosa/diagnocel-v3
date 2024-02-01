@@ -4,9 +4,13 @@
     margin: 0 auto;
 
     ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 30px;
+
+        @include min-lg {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px;
+        }
+       
     }
 
     li {
@@ -26,6 +30,7 @@
 
     a {
         color: $primary-color;
+        text-decoration: none;
         
         &:hover {
             img {
@@ -39,5 +44,18 @@
         max-width: 1250px;
         width: 90vw;
         margin: 0 auto 1.3em;
+
+        &.wp-block-columns {
+            @include max-lg {
+                flex-wrap: nowrap!important;
+            }
+        }
+       
+
+        a {
+            font-size: 14px;
+            text-decoration: none;
+            color: $primary-color;
+        }
     }
 }

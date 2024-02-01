@@ -17,6 +17,14 @@
         .wp-block-media-text__content {
             max-width: 500px;
             margin: 0 auto;
+
+            @include max-lg {
+                padding: {
+                    top: px-rem(20px);
+                    bottom: px-rem(20px)
+                }
+            }
+
             h1 {
                 @include fluid-size(font-size, 30px, 45px);
                 font-weight: 300;
@@ -65,6 +73,12 @@
             max-width: 750px;
             padding-top: px-rem(80px);
             padding-bottom: px-rem(150px);
+
+            p {
+                @include max-lg {
+                    padding: px-rem(30px) px-rem(30px) 0;
+                }
+            }
         }
     }
 
@@ -144,13 +158,21 @@
         position: relative;
 
         &::after {
-            content: '';
-            width: 50%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform: translateX(-40%);
+            @include min-lg {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform: translateX(-40%);
+            }
+        }
+
+        .wp-block-column {
+            @include max-lg {
+                padding: 0 30px;
+            }
         }
     }
 
@@ -160,7 +182,15 @@
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        width: 95vw;
+
+        @include min-lg {
+            width: 95vw;
+        }
+
+        @include max-lg {
+            width: calc(100% - 60px);
+        }
+        
 
         h2, p {
             padding-left: 4%;
@@ -221,9 +251,19 @@
                 fill: $primary-color
             }
             .wp-block-group {
+                
                 &__inner-container {
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: auto auto; 
+
+                    @include max-lg {
+                        width: calc(100% - 30px);
+                        margin: 0 auto;
+                    }
+
+                    @include min-lg {
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: auto auto; 
+                    }
+                  
                 }
             }
         }

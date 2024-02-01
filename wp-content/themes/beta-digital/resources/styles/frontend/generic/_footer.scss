@@ -2,6 +2,10 @@
     background-color: white;
     border-bottom: px-rem(30px) $primary-color solid;
 
+    a {
+        text-decoration: none;
+    }
+
     @include max-xl {
         text-align: center;
     }
@@ -65,21 +69,19 @@
     }
 
     &__termos {
-        display: flex;
-        background-color: $primary-color;
-        justify-content: center;
-        padding: 10px;
+        padding: 0;
         li {
             padding: 0 10px;
             a {
-                font-size: 12px;
-                color: white;
+                font-size: 14px;
+                color: $primary-color;
                 text-decoration: none;
             }
         }
     }
 
     &__selos {
+        border-top: 1px solid $grey-100;
         @include max-xl {
             padding: px-rem(20px) 0;
             border-bottom: 1px solid $grey-100;
@@ -109,25 +111,6 @@
             max-width: 60px;
         }
     }
-
-    &__right {
-        @include max-xl {
-            padding: px-rem(20px) 0;
-        }
-
-        @include min-xl {
-            padding-top: px-rem(40px);
-            justify-self: center;
-        }
-
-        a {
-            color: $grey-500;
-            text-decoration: none;
-            font-size: 16px;
-            line-height: 1.5em;
-        }
-    }
-
     &__diagnocel {
         padding-bottom: 30px;
     }
@@ -136,11 +119,19 @@
         padding-bottom: 30px;
     }
 
-    &__container {
-        @include min-xl {
+    &__main {    
+        padding: px-rem(60px);
+    
+        @include min-lg {
             display: grid;
-            grid-template-columns: calc(100% - 300px) 300px;
+            grid-template-columns: 1fr 1fr auto;
+            grid-gap: 30px;
         }
+    }
+
+    &__container {
+        max-width:$max-width;
+        margin: auto;
 
     }
 }

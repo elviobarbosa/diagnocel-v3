@@ -8,6 +8,10 @@
     transform: translateX(-50%);
     top: 145px;
 
+    @include max-lg {
+        display: none;
+    }
+
     &.jump-fixed {
         top: 77px;
         width: 100%;

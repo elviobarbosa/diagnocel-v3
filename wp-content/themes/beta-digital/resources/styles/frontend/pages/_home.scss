@@ -65,10 +65,6 @@
         width: 90%;
         margin: px-rem(40px) auto 0;
 
-        -webkit-column-count: 3;  /* Chrome/Opera, Safari */
-        -moz-column-count: 3; /* Mozilla Firefox */
-        column-count: 3;
-
         /* Properties below are optional: */
         -webkit-column-gap: 50px; /* Chrome/Opera, Safari */
         -moz-column-gap: 50px; /* Mozilla Firefox */
@@ -77,6 +73,12 @@
         -webkit-column-rule: 1px single grey; /* Chrome/Opera, Safari */
         -moz-column-rule: 1px single grey; /* Mozilla Firefox */
         column-rule: 1px single grey;
+
+        @include min-lg {
+            -webkit-column-count: 3;  /* Chrome/Opera, Safari */
+            -moz-column-count: 3; /* Mozilla Firefox */
+            column-count: 3;
+        }
     }
 
     .selos {
@@ -89,6 +91,10 @@
 
         &__shortcode {
             background-color: white;
+
+            @include max-lg {
+                display: flex;
+            }
         }
     }
 
@@ -97,24 +103,44 @@
             padding: px-rem(10px) px-rem(40px) 0;
         }
 
+        &__tab-content {
+            @include max-lg {
+                width: 80%;
+            }
+        }
+
         &__tab {
             img {
-                max-width: 60px;
+                @include max-lg {
+                    max-width: 40px;
+                    max-height: 40px;
+                }
+                @include min-lg {
+                    max-width: 60px;
+                    max-height: 60px;
+                }
+            }
+            &.active {
+                .selos-home__tablink {
+                    @include max-lg {
+                        border-left: 3px solid $green;
+                    }
+
+                    @include min-lg {
+                        border-top: 3px solid $green;
+                    }
+                    
+                }
+                
             }
         }
 
         &__nav {
             border-top: 1px solid $grey-100;
-        }
 
-        &__tab {
-            &.active {
-                .selos-home__tablink {
-                    border: {
-                        top: 3px solid $green;
-                    };
-                }
-                
+            @include max-lg {
+                width: 20%;
+                display: block;
             }
         }
 
@@ -129,9 +155,15 @@
             cursor: pointer;
             padding: px-rem(20px);
             display: inline-block;
-            border: {
-                right: 1px solid $grey-100;
-            };
+
+            @include max-lg {
+                border-left: 1px solid $grey-100;
+            }
+
+            @include min-lg {
+                border-right: 1px solid $grey-100;
+            }
+            
         }
     }
 }

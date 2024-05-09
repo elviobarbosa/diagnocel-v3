@@ -89,7 +89,10 @@
         padding: px-rem(40px) px-rem(20px);
 
         .safe-svg-cover {
-            text-align: center!important;
+            @include min-lg {
+                text-align: center!important;
+            }
+            
             padding-top: px-rem(20px);
         }
         p, ul {
@@ -134,8 +137,12 @@
                 z-index: 1;
                 position: relative;
                 max-width: 1170px;
-                display: grid;
-                grid-gap: 20px;
+
+                @include min-lg {
+                    display: grid;
+                    grid-gap: 20px;
+                }
+                
             }
         }
     }
@@ -197,7 +204,7 @@
         }
 
         .wp-block-group__inner-container p {
-            @include fluid-size(font-size, 30px, 40px);
+            @include fluid-size(font-size, 24px, 30px);
             font-weight: 300;
             line-height: 1.5em;
         }

@@ -23,18 +23,19 @@
     }
     
     &__grid {
-        
         padding-bottom: px-rem(60px);
+        display: flex;
+        flex-wrap: wrap;
 
         @include min-lg {
-            display: flex;
+            // grid-template-columns: repeat(3, 1fr);
+            column-gap: px-rem(30px);
+            row-gap: px-rem(30px);
         }
 
         @include max-lg {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            gap: 20px;
             margin-top: 20px;
+            gap: px-rem(20px);
         }
 
     }
@@ -126,6 +127,8 @@
 
         @include max-lg {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
        }
 

@@ -16,18 +16,17 @@ export default class SidebarProducts {
 
           if (filter === 'all') {
             $('.product').removeClass('hidden');
+            $('.product').removeClass('nodisplay');
+
           } else {
-           // $('.product').addClass('hide');
-            //$('.product[data-id="' + filter + '"]').removeClass('hide');
-            //$('.product:not([data-id=' + filter + '])').addClass('hidden');
+           
             $('.product').addClass('hidden');
-            $('.product[data-id="' + filter + '"]').removeClass('hidden');
-            //$('.product').addClass('hide');
-            // $('.hidden').fadeOut(()=> {
-             
-            // })
+            setTimeout(() => {
+              $('.hidden').addClass('nodisplay');
+            }, 600)
             
-            
+            $('.product[data-id="' + filter + '"]').removeClass('hidden nodisplay');
+
           }
       });
     }

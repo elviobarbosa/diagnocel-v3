@@ -4,7 +4,7 @@
     
     
     <div class="contato__tabs-container">
-        <h1 class="page-title contato__title">Trabalhe conosco</h1>
+        <h1 class="page-title contato__title">Trabalhe Conosco</h1>
         
             
             <?php 

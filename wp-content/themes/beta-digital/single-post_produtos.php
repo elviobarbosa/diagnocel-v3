@@ -156,7 +156,7 @@ while ( have_posts() ) : the_post();
         <div class="form-contato" id="fale-conosco">
             <h2 class="form-contato__title">Tem interesse?</h2>
             <p>Envie seus dados abaixo, entraremos em contato o mais breve possível.</p>
-            <?php echo do_shortcode('[contact-form-7 id="40f695f" title="Contato"]') ?>
+            <?php echo do_shortcode('[contact-form-7 id="40f695f" title="Contato" produto="'. get_the_title() .'"]') ?>
         </div>
         
         <div id="mais-produtos">

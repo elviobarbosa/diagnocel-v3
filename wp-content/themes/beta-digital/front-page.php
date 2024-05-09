@@ -3,6 +3,7 @@
 <main <?php post_class('home') ?>>
 
    <?php
+   
       the_content();
    ?>
    

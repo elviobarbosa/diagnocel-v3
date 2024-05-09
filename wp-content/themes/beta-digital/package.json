@@ -27,6 +27,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "@wordpress/api-fetch": "^6.53.0",
     "jquery": "^3.6.1",
     "swiper": "8.4.0"
   }

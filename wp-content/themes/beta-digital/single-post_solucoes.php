@@ -27,9 +27,7 @@ if ( has_post_thumbnail() ) {
 
         </div>
 
-        <?php endwhile; endif;
-        get_template_part( 'template-parts/blog/more-news', null, array('remove' => get_the_ID()) );
-        ?>
+        <?php endwhile; endif;?>
     </main>
         <?php
         get_footer();

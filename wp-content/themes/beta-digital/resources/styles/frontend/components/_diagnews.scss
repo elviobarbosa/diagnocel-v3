@@ -1,22 +1,83 @@
-.diagnews {
+.home-diagnews {
     max-width: 1250px;
     width: 90vw;
     margin: 0 auto;
-
+    position: relative;
+    
     ul {
-
-        @include min-lg {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 30px;
+        position: relative;
+        &::after {
+            content: '';
+            width: 30%;
+            height: 80%;
+            display: block;
+            position: absolute;
+            background-image: url($imgpath + '/bg-square.png');
+            top: -20%;
+            left: calc(100% - 380px);
+            max-width: 380px;
+            max-height: 380px;
+            z-index: -1;
         }
-       
     }
+    
 
     li {
-        .wp-block-post-featured-image {
-            @include image-proportional(370, 210);
+        position: relative;
+
+        figure {
+            transition: all 0.3s;
+            transform: scale(1);
         }
+
+        &:hover {
+            z-index: 4;
+            figure {
+                transform: scale(1.1);
+                transition: all 0.3s;
+            }
+        }
+
+        .wp-block-post-featured-image {
+            @include image-proportional(320, 240);
+
+            a {
+                @include min-lg {
+                    max-width: 320px;
+                    max-height: 240px;
+                }
+            }
+
+            &::after {
+                content: '';
+                background-color: $citzen;
+                width: 10%;
+                height: 12%;
+                position: absolute;
+            }
+
+            &::before {
+                content: '';
+                background-color: none;
+                border: 1px solid #cadbda;
+                position: absolute;
+                top: 10px;
+                z-index: 1;
+
+                @include min-lg {
+                    width: 80%;
+                    height: 80%;
+                    left: 10px;
+                }
+
+                @include max-lg {
+                    width: 100%;
+                    height: 100%;
+                    right: 10px;
+                }
+            }
+        }
+
         img {
             transition: all 0.3s;
         }
@@ -27,17 +88,20 @@
     hr {
         display: none;
     }
-
-    a {
-        color: $primary-color;
-        text-decoration: none;
+    
+    h2.wp-block-post-title {
         
-        &:hover {
-            img {
-                transform: scale(1.1);
-                transition: all 0.3s;
-            }
+        @include min-lg {
+            margin-top: -20px;
+            max-width: 320px;
         }
+        
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            @include fluid-size(font-size, 18px, 20px);
+        }
+        
     }
 
     &__title {
@@ -51,11 +115,6 @@
             }
         }
        
-
-        a {
-            font-size: 14px;
-            text-decoration: none;
-            color: $primary-color;
-        }
+    
     }
 }

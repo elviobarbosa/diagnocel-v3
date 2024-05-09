@@ -59,5 +59,13 @@
 
     &__content {
         padding: px-rem(20px);
+
+        > .wp-block-group {
+            .wp-block-columns {
+                &:where(.wp-block-columns) {
+                    margin-bottom: 1em;
+                }
+            }
+        }
     }
 }

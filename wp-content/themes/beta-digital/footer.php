@@ -26,20 +26,25 @@ $argsSelos = array(
                     <div class="footer__biocore">
                         <img src="<?php echo IMGPATH?>biocore.png" alt="Biocore">
                         <p>
-                            <a href="https://maps.app.goo.gl/nM2pjEZeCTr2WjdA7" target="_blank" alt="Ver localização no Google Maps">R. Duarte Coelho, 399 - F<br>
+                            <a href="https://maps.app.goo.gl/nM2pjEZeCTr2WjdA7" target="_blank" alt="Ver localização no Google Maps">R. Duarte Coelho, 399 - E<br>
                             Paupina - Fortaleza-CE</a><br><br>
-                            <a href="tel:+558534623600" alt="Ligar">(85) 3462-3600</a>
+                            <a href="tel:+558532242944" alt="Ligar">(85) 3224-2944</a>
                         </p>
                     </div>
 
                     <ul class="footer__termos">
-                        <li><h3>Termos e Condições</h3></li>
-                        <li><a href="<?php echo site_url('/codigo-de-conduta-e-etica-diagnocel')?>">Código de conduta e ética - Diagnocel</a></li>
-                        <li><a href="<?php echo site_url('/codigo-de-conduta-e-etica-biocore')?>">Código de conduta e ética - Biocore</a></li>
-                        <li><a href="<?php echo site_url('/politica-de-seguranca-da-informacao-diagnocel')?>">Política de Segurança da Informação – Diagnocel</a></li>
-                        <li><a href="<?php echo site_url('/politica-de-seguranca-da-informacao-biocore')?>">Política de Segurança da Informação – Biocore</a></li>
-                        <li><a href="<?php echo site_url('/responsabilidade-socioambiental')?>">Responsabilidade socioambiental</a></li>
-                        <li><a href="<?php echo site_url('/politica-de-privacidade')?>">Política de privacidade</a></li>
+                        <li><h3>Links rápidos</h3></li>
+                        
+                        <?php 
+                            wp_nav_menu( 
+                            array( 
+                                'theme_location' 	=> 'footer-menu',
+                                'menu_class'		=> 'footer__termos',
+                                'container'			=> 'ul',
+                                
+                            ) ); 
+                        ?>
+
                     </ul>
                 </div>
 

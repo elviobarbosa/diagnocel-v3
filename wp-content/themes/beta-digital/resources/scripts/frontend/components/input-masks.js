@@ -13,13 +13,13 @@ export default class InputMasks {
     }
 
     init() {
-        const form = document.querySelector(this.selector);
+        const forms = document.querySelectorAll(this.selector);
 
-        if (form) {
+        forms.forEach(form => {
             this.initPhoneMask(form);
             this.initCpfMask(form);
             this.initCnpjMask(form);
-        }
+        }); 
     }
     
     initPhoneMask(form) {

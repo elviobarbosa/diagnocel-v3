@@ -1,6 +1,8 @@
 <div class="container">
+   
     <div>
         <div class="read-more">
+        <h2 class="read-more__label">Veja também</h2>
             <?php
             $orig_post = $post;
             global $post;

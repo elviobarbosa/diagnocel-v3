@@ -1,23 +1,25 @@
 <?php 
 function setup() {
-    add_filter( 'wp_mail_from', 'sender_custom_email' );
-    function sender_custom_email( $original_email_address ) {
-        $domain = str_replace(['http://', 'https://'], '', get_blog_info('url'));
-        return 'noreply@' . $domain;
-    }
+    // add_filter( 'wp_mail_from', 'sender_custom_email' );
+    // function sender_custom_email( $original_email_address ) {
+    //     $domain = str_replace(['http://', 'https://'], '', get_blog_info('url'));
+    //     return 'noreply@' . $domain;
+    // }
 
-    add_filter( 'wp_mail_from_name', 'sender_custom_name' );
-    function sender_custom_name( $original_email_from ) {
-        return get_bloginfo('name');
-    }
+    // add_filter( 'wp_mail_from_name', 'sender_custom_name' );
+    // function sender_custom_name( $original_email_from ) {
+    //     return get_bloginfo('name');
+    // }
 
-    if (function_exists('acf_add_options_page')) :
-        acf_add_options_page();
-    endif;
+    // if (function_exists('acf_add_options_page')) :
+    //     acf_add_options_page();
+    // endif;
 
     register_nav_menu('header-menu',__( 'Menu Principal' ));
-	
+    register_nav_menu('footer-menu',__( 'Menu rodapé' ));
 }
+
+add_action( 'after_setup_theme', 'setup' );
 
 function register_custom_image_sizes() {
     if ( ! current_theme_supports( 'post-thumbnails' ) ) {
@@ -141,7 +143,7 @@ function custom_taxonomy_template( $template ) {
 
     return $template;
 }
-add_filter( 'template_include', 'custom_taxonomy_template' );
+//add_filter( 'template_include', 'custom_taxonomy_template' );
 
 function add_submenu_prod_cat($items, $args) {
     $menu_locations = get_nav_menu_locations();
@@ -149,25 +151,25 @@ function add_submenu_prod_cat($items, $args) {
     if ($args->theme_location == 'header-menu' && isset($menu_locations['header-menu'])) {
         foreach ($items as $item) {
             if ($item->title === 'Produtos') {
-                $terms = get_terms('prod_category');
+                $terms = get_terms('prod_category', array('parent' => 0));
                 $submenu_items = [];
 
 
-                if (!empty($terms)) {
-                    $item->classes[] = 'menu-item-has-children';
-                    foreach ($terms as $term) {
-                        $submenu_item = array (
-                            'title'            => $term->name,
-                            'menu_item_parent' => $item->ID,
-                            'ID'               => $term->term_id,
-                            'db_id'            => count($submenu_items) + 1,
-                            'url'              => get_term_link($term)
-                        );
+                // if (!empty($terms)) {
+                //     $item->classes[] = 'menu-item-has-children';
+                //     foreach ($terms as $term) {
+                //         $submenu_item = array (
+                //             'title'            => $term->name,
+                //             'menu_item_parent' => $item->ID,
+                //             'ID'               => $term->term_id,
+                //             'db_id'            => count($submenu_items) + 1,
+                //             'url'              => get_term_link($term)
+                //         );
 
-                        $items[] = (object) $submenu_item;
+                //         $items[] = (object) $submenu_item;
                         
-                    }
-                }
+                //     }
+                // }
             }
 
             if ($item->title === 'Busca') {
@@ -196,3 +198,5 @@ function remove_cpt_search($query) {
     }
 }
 add_action('pre_get_posts', 'remove_cpt_search');
+
+

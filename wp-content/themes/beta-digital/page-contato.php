@@ -51,27 +51,17 @@ $items = Array(
             <div class="tab">
                 <div id="contato-0" class="tabcontent">
                     <?php echo do_shortcode('[contact-form-7 id="2b31fcc" title="Denuncia"]') ?>
-                    <?php 
-                    get_template_part('template-parts/contato/endereco', null);
-                    ?>
                 </div>
                 <div id="contato-1" data-tab="contato-2" class="tabcontent">
                     <?php echo do_shortcode('[contact-form-7 id="e08b92a" title="Solicitacao"]') ?>
-                    <?php 
-                    get_template_part('template-parts/contato/endereco', null);
-                    ?>
+                    
                 </div>
                 <div id="contato-2" data-tab="contato-3" class="tabcontent">
                     <?php echo do_shortcode('[contact-form-7 id="6f674b9" title="Elogio"]') ?>
-                    <?php 
-                    get_template_part('template-parts/contato/endereco', null);
-                    ?>
+                    
                 </div>
                 <div id="contato-3" data-tab="contato-4" class="tabcontent">
                     <?php echo do_shortcode('[contact-form-7 id="09c174b" title="Reclamacao"]') ?>
-                    <?php 
-                    get_template_part('template-parts/contato/endereco', null);
-                    ?>
                 </div>
             </div>
         </div>

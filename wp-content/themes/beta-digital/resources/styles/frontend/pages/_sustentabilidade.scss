@@ -3,14 +3,40 @@
 }
 
 .sustentabilidade {
-    &__cover {
 
-        h1 {
+    &__content {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        &::after {
+            content: '';
+            width: 30%;
+            height: 40%;
+            background-image: url($imgpath + '/bg-square-green2.png');
+            position: absolute;
+            bottom: -220px;
+            right: 0;
+        }
+
+        
+    }
+    
+    &__cover {
+        h1.wp-block-heading {
             @include fluid-size(font-size, 30px, 45px);
             font-weight: 300;
             max-width: 500px;
             color: white;
             margin: 0 auto px-rem(20px);
+        }
+
+        .wp-block-media-text__content {
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
        
         p {
@@ -118,6 +144,101 @@
                 }
             
             }
+        }
+    }
+
+    .wp-block-heading {
+        color: $secondary-color;
+        @include fluid-size(font-size, 24px, 40px);
+    }
+
+    .wp-block-query {
+        max-width: $max-width;
+        margin: 0 auto;
+        width: 90%;
+
+        .wp-block-post-featured-image {
+            @include image-proportional(320, 240);
+
+            a {
+                @include min-lg {
+                    max-width: 320px;
+                    max-height: 240px;
+                }
+            }
+
+            &::after {
+                content: '';
+                background-color: #EAF2F2;
+                width: 10%;
+                height: 12%;
+                position: absolute;
+            }
+
+            &::before {
+                content: '';
+                background-color: none;
+                border: 1px solid #cadbda;
+                position: absolute;
+                top: 10px;
+                z-index: 1;
+
+                @include min-lg {
+                    width: 75%;
+                    height: 75%;
+                    left: 10px;
+                }
+
+                @include max-lg {
+                    width: 100%;
+                    height: 100%;
+                    right: 10px;
+                }
+            }
+            
+        }
+
+        .wp-block-post-date {
+           
+            @include max-lg {
+                margin-top: 10px;
+            }
+
+            @include min-lg {
+                margin-top: -40px;
+            }
+
+            time {
+                font-size: 14px;
+            }   
+        }
+
+        .wp-block-post {
+            figure {
+                transition: all .5s;
+            }
+            &:hover {
+                figure {
+                    transform: scale(1.1);
+                    transition: all .5s;
+                }   
+            }
+        }
+
+        h2.wp-block-post-title {
+            margin-top: 10px;
+            
+            @include min-lg {
+                max-width: 350px;
+            }
+
+            a {
+                color: $primary-color;
+                @include fluid-size(font-size, 18px, 20px);
+                text-decoration: none;
+                line-height: 1.4em;
+            }
+           
         }
     }
 }

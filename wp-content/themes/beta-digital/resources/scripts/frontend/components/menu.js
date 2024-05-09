@@ -18,6 +18,7 @@ export default class Menu {
             e.preventDefault();
             const target = e.currentTarget;
             const navMenu = document.querySelector('.js-nav-menu');
+            menuContainer.classList.toggle('active');
             target.classList.toggle('active');
             navMenu.classList.toggle('active');
         });

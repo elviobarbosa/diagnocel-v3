@@ -18,6 +18,13 @@
         color: $primary-color
     }
 
+    &__label {
+        @include fluid-size(font-size, 24px, 30px);
+        color: $primary-color;
+        padding-bottom: px-rem(30px);
+        border-bottom: 1px solid #cadbda;
+    }
+
     &__title {
         line-height: 1em;
         a {

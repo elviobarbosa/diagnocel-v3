@@ -96,6 +96,14 @@
                 display: flex;
             }
         }
+
+        &__text {
+            @include max-lg {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+           
+        }
     }
 
     .selos-home {
@@ -145,25 +153,9 @@
         }
 
         &__tablink {
-
-            &.active {
-                border: {
-                    right: 1px solid $green;
-                };
-            }
-
             cursor: pointer;
             padding: px-rem(20px);
             display: inline-block;
-
-            @include max-lg {
-                border-left: 1px solid $grey-100;
-            }
-
-            @include min-lg {
-                border-right: 1px solid $grey-100;
-            }
-            
         }
     }
 }

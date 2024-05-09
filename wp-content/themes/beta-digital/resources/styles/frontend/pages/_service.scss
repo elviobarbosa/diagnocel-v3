@@ -14,9 +14,15 @@
     &__container {
         display: flex;
         align-items: center;
+
+        @include max-lg {
+            flex-direction: column-reverse;
+        }
         
         &:nth-child(odd) {
-            flex-direction: row-reverse;
+            @include min-lg {
+                flex-direction: row-reverse;
+            }
 
             .archive-servicos__thumbnail-container {
                 .square-details {
@@ -69,8 +75,15 @@
     }
 
     &__thumbnail-container {
-        width: 50%;
         position: relative;
+
+        @include max-lg {
+            width: 100%;
+        }
+        
+        @include min-lg {
+            width: 50%;
+        }
 
         .square-details {
             z-index: 6;
@@ -81,9 +94,17 @@
     }
 
     &__texts {
-        width: 50%;
         padding: 0 px-rem(40px);
         box-sizing: border-box;
+
+        @include max-lg {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        @include min-lg {
+            width: 50%;
+        }
         
     }
 

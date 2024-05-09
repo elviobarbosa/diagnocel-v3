@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 <head>
+
 	<?php
-	if('post_produtos' != get_post_type() ){
+	if('post_produtos' != get_post_type() && !is_page('contato') && !is_page('trabalhe-conosco') ){
 		add_action( 'wpcf7_enqueue_styles', function() { wp_deregister_style( 'contact-form-7' ); } );
 		add_action( 'wpcf7_enqueue_scripts', function() { wp_deregister_script( 'jquery-form' ); } );
 		add_action( 'wpcf7_enqueue_scripts', function() { wp_deregister_script( 'contact-form-7' ); } );

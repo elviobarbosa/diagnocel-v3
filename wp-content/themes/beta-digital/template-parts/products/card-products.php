@@ -29,7 +29,7 @@ $terms = get_terms( array(
 
         <div class="c-card-products__image">
             <a href="<?php echo $args['guid'] ?>" alt="Veja mais detalhes do produto: <?php echo $args['title'] ?>">
-                <figure class="c-card-products__figure"><?php the_post_thumbnail('medium') ?></figure>
+                <figure class="c-card-products__figure"><?php echo get_the_post_thumbnail( $args['ID'], 'medium' ); ?></figure>
             </a>
         </div>
     </div>

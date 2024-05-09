@@ -14,13 +14,28 @@
 		padding: px-rem(10px) px-rem(10px);
 	}
 
+	
+	&.active {
+		.nav-container__logo {
+			@include max-lg {
+				display: none;
+			}
+		}
+
+		&.fixed {
+			@include max-lg {
+				top: 20px;
+			}
+		}
+	}
+
 	&.fixed {
 		left: 0;
 		position: fixed;
-		top: 0;
 		padding-top: 0;
 		padding-bottom: 0;
 		transition: all .5s;
+		top: 0;
 	}
 
 	&__container {
@@ -64,6 +79,12 @@
 
 	nav.main-menu {
 		width: 100%;
+
+		@include max-lg {
+			height: 90%;
+			overflow-y: auto;
+			margin-top: 10%;
+		}
 		
 		#menu-header-menu > .menu-item-has-children {
 			background-image: url($imgpath + '/seta-submenu.png');

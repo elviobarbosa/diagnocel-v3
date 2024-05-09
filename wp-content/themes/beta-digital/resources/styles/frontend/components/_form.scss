@@ -14,6 +14,21 @@
     }
 }
 
+.form {
+    &__hidden {
+        display: none;
+    }
+}
+
+.form__legal {
+	text-align: center!important;
+	font-size: 12px;
+
+    a {
+        font-size: 12px;
+    }
+}
+
 .form-contato {
     max-width: $max-width;
     margin: 0 auto;

@@ -1,3 +1,4 @@
+
 export default class Tabs {
 
     constructor() {
@@ -25,7 +26,10 @@ export default class Tabs {
 
             tabcontent.forEach(elemento => {
                 if (alturaMaxima > 0) {
-                elemento.style.height = `${alturaMaxima + 100}px`;
+                    if (window.innerWidth > 600) {
+                        elemento.style.height = `${alturaMaxima + 100}px`;
+                    }
+               
                 elemento.classList.add('hide')
                 }
             });

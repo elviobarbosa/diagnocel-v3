@@ -15,10 +15,19 @@
 
     a, span {
         display: inline-block;
-        margin: {
-            left: 1rem;
-            right: 1rem;
-        };
+        @include max-lg {
+            margin: {
+                left: 1rem;
+                right: 0;
+            };
+        }
+
+        @include min-lg {
+            margin: {
+                left: 1rem;
+                right: 1rem;
+            };
+        }
         text-decoration: none;
     }
 

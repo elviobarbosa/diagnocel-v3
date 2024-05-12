@@ -54,6 +54,7 @@
                 width: 10%;
                 height: 12%;
                 position: absolute;
+                pointer-events: none;
             }
 
             &::before {
@@ -63,6 +64,7 @@
                 position: absolute;
                 top: 10px;
                 z-index: 1;
+                pointer-events: none;
 
                 @include min-lg {
                     width: 80%;

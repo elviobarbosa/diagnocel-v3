@@ -73,6 +73,7 @@
             max-width: 750px;
             padding-top: px-rem(80px);
             padding-bottom: px-rem(150px);
+            margin: 0 auto;
 
             p {
                 @include max-lg {
@@ -137,6 +138,7 @@
                 z-index: 1;
                 position: relative;
                 max-width: 1170px;
+                margin: 0 auto;
 
                 @include min-lg {
                     display: grid;

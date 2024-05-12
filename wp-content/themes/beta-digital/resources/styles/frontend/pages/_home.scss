@@ -108,7 +108,13 @@
 
     .selos-home {
         &__item {
-            padding: px-rem(10px) px-rem(40px) 0;
+            @include min-lg {
+                padding: px-rem(10px) px-rem(40px) 0;
+            }
+
+            @include max-lg {
+                padding: px-rem(10px) px-rem(20px) 0;
+            }
         }
 
         &__tab-content {

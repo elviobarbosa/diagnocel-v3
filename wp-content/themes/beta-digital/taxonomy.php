@@ -2,10 +2,8 @@
 
 $cat_name = single_term_title("", false);
 $product_cat = get_term_by('name', $cat_name, 'prod_category');
-print_r($product_cat);
 $post_type = get_post_type();
 $term_list = get_the_terms($post->ID, 'prod_category');
-print_r($term_list);
 $bg = '';
 $description  = '';
 $prod_names = array();
@@ -57,13 +55,10 @@ get_header();
                     <?php
                     while ( have_posts() ) : the_post(); 
                         $post_terms = get_the_terms(get_the_ID(), 'prod_category');
-                        //print_r($post_terms);
                         
-
                         if ($post_terms) {
                             
                             $product_cat_term_id = $post_terms[0]->term_id;
-                            //printf('<pre>%s</pre>', print_r($post_terms, true));
                             $filtered_terms = remove_ascendents($post_terms, $product_cat_term_id);
                             
                             foreach ($filtered_terms as $term) {

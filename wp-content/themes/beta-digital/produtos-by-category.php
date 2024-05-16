@@ -1,4 +1,13 @@
 <?php
+$controller_file ='/app/controllers/produtos.php';
+require_once $controller_file;
+
+$queried_term = get_queried_object();
+$taxonomy = $queried_term->taxonomy;
+print_r($taxonomy);
+//$investor = \App\Controllers::getProdutosByCategoria(  );
+
+exit;
 get_header();
 $cat_name = single_term_title("", false);
 $product_cat = get_term_by('name', $cat_name, 'prod_category');
